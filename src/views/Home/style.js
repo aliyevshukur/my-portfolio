@@ -10,6 +10,7 @@ export const HomeWrapper = styled(Wrapper)`
 
 export const HomeContent = styled.div`
   max-width: 700px;
+  margin-left: 40px;
 `;
 
 export const ContentHeader = styled.h1`
@@ -23,4 +24,7 @@ export const ContentText = styled.p`
   color: ${(props) => props.theme.darkText};
 `;
 
-export const ContentImage = styled.img``;
+export const ContentImage = styled.img`
+  max-width: 100%;
+  height: auto;
+`;

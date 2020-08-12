@@ -1,59 +1,68 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import { withTheme } from "styled-components";
-import { Link } from "react-router-dom";
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
+import { FiBookOpen, FiCpu, FiGitBranch } from "react-icons/fi";
+import { IconContext } from "react-icons";
 
-import {
-  NavWrapper,
-  HomeIcon,
-  ProjectIcon,
-  ContactIcon,
-  IconWrapper,
-} from "./style";
-// import Logo from "../../../public/img/logo.svg";
+import { NavWrapper, NavIcon } from "./style";
+import { BurgerMenu } from "../BurgerMenu";
+import { NavContext } from "./NavContext";
+import { CSSTransition } from "react-transition-group";
 
-export const LeftNavigation = withTheme((props) => {
+export const LeftNavigation = withTheme(() => {
   const { pathname } = useLocation();
+  const { isVisible } = useContext(NavContext);
+  const [toggleMenu, setToggleMenu] = useState(false);
+
+  const routes = ["/", "/projects", "/contact"];
+  const currentScreen = routes.indexOf(pathname);
 
   return (
-    <NavWrapper>
-      {/* <img src={Logo} /> */}
-      <IconWrapper value={{ size: "1.3em" }}>
-        <Link to={prepateLocation(pathname, "/")}>
-          <HomeIcon isActive={pathname === "/"} />
-        </Link>
-        <Link to={prepateLocation(pathname, "/projects")}>
-          <ProjectIcon isActive={pathname === "/projects"} />
-        </Link>
-        <Link to={prepateLocation(pathname, "/contact")}>
-          <ContactIcon isActive={pathname === "/contact"} last />
-        </Link>
-      </IconWrapper>
-    </NavWrapper>
+    <>
+      <BurgerMenu
+        onClick={() => {
+          console.log("hi");
+          setToggleMenu(!toggleMenu);
+        }}
+      />
+      <CSSTransition in={toggleMenu} timeout={500} classNames="menu-open">
+        <NavWrapper isVisible={isVisible} toggleMenu={toggleMenu}>
+          <IconContext.Provider value={{ size: "1.3em" }}>
+            <Link
+              to={{
+                pathname: "/",
+                state: { prevScreen: currentScreen, routes },
+              }}
+            >
+              <NavIcon isActive={pathname === "/"}>
+                <FiCpu />
+              </NavIcon>
+            </Link>
+
+            <Link
+              to={{
+                pathname: "/projects",
+                state: { prevScreen: currentScreen, routes },
+              }}
+            >
+              <NavIcon isActive={pathname === "/projects"}>
+                <FiGitBranch />
+              </NavIcon>
+            </Link>
+
+            <Link
+              to={{
+                pathname: "/contact",
+                state: { prevScreen: currentScreen, routes },
+              }}
+            >
+              <NavIcon isActive={pathname === "/contact"} last>
+                <FiBookOpen />
+              </NavIcon>
+            </Link>
+          </IconContext.Provider>
+        </NavWrapper>
+      </CSSTransition>
+    </>
   );
 });
-
-const prepateLocation = (prevPath, currentPath) => {
-  if (currentPath === "/") {
-    console.log("h down");
-    return { pathname: currentPath, state: { animation: "slide-down" } };
-  }
-
-  if (currentPath === "/contact") {
-    console.log("c up");
-
-    return { pathname: currentPath, state: { animation: "slide-up" } };
-  }
-
-  if (currentPath === "/projects" && prevPath === "/") {
-    console.log("p down");
-
-    return { pathname: currentPath, state: { animation: "slide-up" } };
-  }
-
-  if (currentPath === "/projects" && prevPath === "/contact") {
-    console.log("p down");
-
-    return { pathname: currentPath, state: { animation: "slide-down" } };
-  }
-};

@@ -1,39 +1,36 @@
 import React, { Component } from "react";
-import { Route, Switch } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
-import { TransitionGroup, CSSTransition } from "react-transition-group";
 
-import { Wrapper } from "./style.js";
-import GlobalStye from "./GlobalStyle";
-import { Home, Projects, Contact } from "./views";
-import { LeftNavigation } from "./components";
 import theme from "./theme";
-import "./style.css";
+import GlobalStye from "./GlobalStyle";
+import { Wrapper } from "./style.js";
+import { RootNavigation } from "./RootNavigation";
+import { NavProvider } from "./components/LeftNavigation/NavContext";
 
-export default class App extends Component {
+class App extends Component {
+  state = {
+    isVisible: true,
+  };
+
+  setVisible = (value) => {
+    console.log("inside set visible", value);
+    this.setState({ isVisible: value });
+  };
+
   render() {
     return (
-      <ThemeProvider theme={theme} component={Wrapper}>
-        <GlobalStye />
-        <LeftNavigation />
-        <Route
-          render={({ location }) => (
-            <TransitionGroup>
-              <CSSTransition
-                timeout={{ enter: 1000, exit: 1000 }}
-                key={location.key}
-                classNames={location.state?.animation || "slide-down"}
-              >
-                <Switch location={location}>
-                  <Route exact path="/" component={Home} />
-                  <Route path="/projects" component={Projects} />
-                  <Route path="/contact" component={Contact} />
-                </Switch>
-              </CSSTransition>
-            </TransitionGroup>
-          )}
-        />
-      </ThemeProvider>
+      <NavProvider
+        value={{ isVisible: this.state.isVisible, setVisible: this.setVisible }}
+      >
+        <ThemeProvider theme={theme} component={Wrapper}>
+          <GlobalStye />
+          <Wrapper>
+            <RootNavigation />
+          </Wrapper>
+        </ThemeProvider>
+      </NavProvider>
     );
   }
 }
+
+export default App;

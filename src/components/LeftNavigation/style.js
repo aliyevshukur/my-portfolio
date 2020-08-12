@@ -1,43 +1,43 @@
-import styled, { css } from "styled-components";
-import { TiHomeOutline, TiDeviceDesktop, TiContacts } from "react-icons/ti";
-import { IconContext } from "react-icons";
-import { Link } from "react-router-dom";
+import styled from "styled-components";
 
-export const NavWrapper = styled.h1`
-  background-color: ${(props) => props.theme.lightText};
+import { devices } from "../../GlobalStyle";
+
+export const NavWrapper = styled.div`
+  background-color: ${(props) => props.theme.primary};
   height: 100%;
-  max-width: ${(props) => props.theme.leftNavWidth};
-  display: flex;
+  display: ${(props) => (props.isVisible ? "flex" : "none")};
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 25px;
-  color: red;
   font-size: 24px;
   box-shadow: 2px 0px 5px 0px rgba(0, 0, 0, 0.75);
-`;
 
-export const IconWrapper = styled(IconContext.Provider)``;
+  &.menu-open-enter {
+    transform: translateX(-100%);
+  }
 
-export const StyledLink = styled(Link)`
-  color: ${(props) =>
-    props.isActive ? props.theme.primary : props.theme.darkText};
-  margin-bottom: ${(props) => (props.last ? 0 : 70)}px;
-`;
+  &.menu-open-enter-active {
+    transform: translateX(0%);
+    transition: transform 500ms;
+  }
 
-const sharedIcon = css``;
+  &.menu-open-exit {
+    transform: translateX(0%);
+  }
 
-export const HomeIcon = styled(TiHomeOutline)`
-  ${sharedIcon}
-  &:hover {
-    color: "red";
+  &.menu-open-exit-active {
+    transform: translateX(-100%);
+    transition: transform 500ms;
+  }
+
+  @media ${devices.tablet} {
+    display: ${(props) => (props.toggleMenu ? "flex" : "none")};
   }
 `;
 
-export const ProjectIcon = styled(TiDeviceDesktop)`
-  ${sharedIcon}
-`;
-
-export const ContactIcon = styled(TiContacts)`
-  ${sharedIcon}
+export const NavIcon = styled.div`
+  color: ${(props) =>
+    props.isActive ? props.theme.secondary : props.theme.darkText};
+  margin-bottom: ${(props) => (props.last ? 0 : 70)}px;
 `;

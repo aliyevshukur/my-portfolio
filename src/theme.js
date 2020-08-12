@@ -1,9 +1,9 @@
 const theme = {
-  primary: "#FAEBB8",
-  secondary: "#CEB36F",
-  darkText: "#3F3D56",
-  lightText: "#FFFFFF",
-  borderColor: "#282828",
+  primary: "#242331",
+  secondary: "#473BF0",
+  darkText: "#857C8D",
+  lightText: "#FBFEF9",
+  borderColor: "#06AED5",
   leftNavWidth: "110px",
   spacing: (n) => n * 20,
 };
