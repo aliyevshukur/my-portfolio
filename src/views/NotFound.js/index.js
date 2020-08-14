@@ -1,27 +1,25 @@
 import React, { useContext, useEffect } from "react";
-import { useLocation } from "react-router-dom";
 
-import { Wrapper, MehIcon } from "./style";
-import {
-  NavContext,
-  NavConsumer,
-} from "../../components/LeftNavigation/NavContext";
+import { Wrapper, MehIcon, Button, StyledLink, NotFoundContent } from "./style";
+import { NavContext } from "../../components/LeftNavigation/NavContext";
 
 export const NotFound = () => {
   const { setVisible } = useContext(NavContext);
-  const { pathname } = useLocation();
   useEffect(() => {
     setVisible(false);
     return () => {
       setVisible(true);
     };
-  }, []);
+  }, [setVisible]);
   return (
-    // <NavConsumer>
     <Wrapper>
       <MehIcon />
-      <h1>404 not found</h1>
+      <NotFoundContent>
+        <h1>404 not found</h1>
+        <Button>
+          <StyledLink to="/">Go Home</StyledLink>
+        </Button>
+      </NotFoundContent>
     </Wrapper>
-    // </NavConsumer>
   );
 };

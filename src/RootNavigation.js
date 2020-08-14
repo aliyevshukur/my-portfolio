@@ -5,6 +5,7 @@ import { TransitionGroup, CSSTransition } from "react-transition-group";
 import { Home, Projects, Contact } from "./views";
 import { LeftNavigation } from "./components";
 import { NotFound } from "./views/NotFound.js";
+import { PageContainer } from "./views/defaultPageStyle";
 
 export const RootNavigation = withRouter(() => {
   return (
@@ -22,7 +23,7 @@ export const RootNavigation = withRouter(() => {
                     : "slide-up",
               })
             }
-            component={null}
+            component={PageContainer}
           >
             <CSSTransition timeout={1000} key={location.key}>
               <Switch location={location}>

@@ -1,5 +1,11 @@
 import styled from "styled-components";
 
+export const PageContainer = styled.div`
+  width: 100%;
+  height: 100%;
+  position: relative;
+`;
+
 export const Wrapper = styled.div`
   width: 100%;
   height: 100%;
@@ -7,7 +13,9 @@ export const Wrapper = styled.div`
   top: 0;
   right: 0;
   z-index: -1;
+  padding: ${(props) => props.theme.spacing(2)}px;
 
+  /* SLIDE DOWN */
   &.slide-down-enter {
     transform: translateY(100%);
   }
@@ -26,6 +34,7 @@ export const Wrapper = styled.div`
     transition: transform 1000ms ease-in-out;
   }
 
+  /* SLIDE UP */
   &.slide-up-enter {
     transform: translateY(-100%);
   }

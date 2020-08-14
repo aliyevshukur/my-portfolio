@@ -1,16 +1,23 @@
 import styled from "styled-components";
+
 import { Wrapper } from "../defaultPageStyle";
+import { devices } from "../../GlobalStyle";
 
 export const HomeWrapper = styled(Wrapper)`
   background-color: ${(props) => props.theme.primary};
   display: flex;
   align-items: center;
-  padding: ${(props) => props.theme.spacing(6)}px;
+  justify-content: space-evenly;
+
+  @media ${devices.laptop} {
+    flex-direction: column-reverse;
+    justify-content: center;
+  }
 `;
 
 export const HomeContent = styled.div`
-  max-width: 700px;
-  margin-left: 40px;
+  max-width: 600px;
+  margin-top: ${(props) => props.theme.spacing(3)}px;
 `;
 
 export const ContentHeader = styled.h1`
@@ -27,4 +34,8 @@ export const ContentText = styled.p`
 export const ContentImage = styled.img`
   max-width: 100%;
   height: auto;
+
+  @media ${devices.tablet} {
+    width: 300px;
+  }
 `;

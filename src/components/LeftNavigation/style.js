@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 import { devices } from "../../GlobalStyle";
 
-export const NavWrapper = styled.div`
+export const NavWrapper = styled.nav`
   background-color: ${(props) => props.theme.primary};
   height: 100%;
   display: ${(props) => (props.isVisible ? "flex" : "none")};
@@ -14,7 +14,7 @@ export const NavWrapper = styled.div`
   box-shadow: 2px 0px 5px 0px rgba(0, 0, 0, 0.75);
 
   &.menu-open-enter {
-    transform: translateX(-100%);
+    transform: translateX(-110%);
   }
 
   &.menu-open-enter-active {
@@ -27,17 +27,13 @@ export const NavWrapper = styled.div`
   }
 
   &.menu-open-exit-active {
-    transform: translateX(-100%);
+    transform: translateX(-110%);
     transition: transform 500ms;
   }
 
   @media ${devices.tablet} {
-    display: ${(props) => (props.toggleMenu ? "flex" : "none")};
+    position: absolute;
+    top: 0;
+    left: 0;
   }
-`;
-
-export const NavIcon = styled.div`
-  color: ${(props) =>
-    props.isActive ? props.theme.secondary : props.theme.darkText};
-  margin-bottom: ${(props) => (props.last ? 0 : 70)}px;
 `;
