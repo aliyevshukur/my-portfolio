@@ -2,10 +2,22 @@ import styled from "styled-components";
 
 import { devices } from "../../GlobalStyle";
 
-export const NavWrapper = styled.nav`
+export const NavWrapper = styled.div`
+  height: 100%;
+
+  @media ${devices.tablet} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: ${(props) => (props.toggleMenu ? "100%" : "auto")};
+    background: rgba(0, 0, 0, 0.5);
+  }
+`;
+
+export const NavContent = styled.nav`
   background-color: ${(props) => props.theme.primary};
   height: 100%;
-  display: ${(props) => (props.isVisible ? "flex" : "none")};
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;

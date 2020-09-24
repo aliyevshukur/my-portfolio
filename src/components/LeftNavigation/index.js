@@ -4,7 +4,7 @@ import { useLocation } from "react-router-dom";
 import { FiBookOpen, FiCpu, FiGitBranch } from "react-icons/fi";
 import { IconContext } from "react-icons";
 
-import { NavWrapper } from "./style";
+import { NavContent, NavWrapper } from "./style";
 import { BurgerMenu } from "../BurgerMenu";
 import { NavContext } from "./NavContext";
 import { CSSTransition } from "react-transition-group";
@@ -58,7 +58,7 @@ export const LeftNavigation = withTheme(() => {
   ];
 
   return (
-    <>
+    <NavWrapper toggleMenu={toggleMenu}>
       <BurgerMenu
         onClick={() => setToggleMenu(!toggleMenu)}
         isToggled={toggleMenu}
@@ -69,7 +69,7 @@ export const LeftNavigation = withTheme(() => {
         timeout={500}
         classNames="menu-open"
       >
-        <NavWrapper isVisible={isVisible} toggleMenu={toggleMenu}>
+        <NavContent isVisible={isVisible}>
           <IconContext.Provider value={{ size: "1.3em" }}>
             {navItems.map(({ to, isActive, icon, last }, ind) => (
               <NavItem
@@ -81,8 +81,8 @@ export const LeftNavigation = withTheme(() => {
               />
             ))}
           </IconContext.Provider>
-        </NavWrapper>
+        </NavContent>
       </CSSTransition>
-    </>
+    </NavWrapper>
   );
 });

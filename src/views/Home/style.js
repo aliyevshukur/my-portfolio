@@ -32,10 +32,14 @@ export const ContentText = styled.p`
 `;
 
 export const ContentImage = styled.img`
-  max-width: 100%;
+  width: 500px;
   height: auto;
 
   @media ${devices.tablet} {
     width: 300px;
   }
+`;
+
+export const Name = styled.span`
+  color: ${(props) => props.theme.secondary};
 `;

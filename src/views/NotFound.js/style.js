@@ -37,3 +37,8 @@ export const StyledLink = styled(Link)`
   color: ${(props) => props.theme.primary};
   font-size: 20px;
 `;
+
+export const NotFoundImage = styled.img`
+  width: 600px;
+  margin-bottom: 70px;
+`;

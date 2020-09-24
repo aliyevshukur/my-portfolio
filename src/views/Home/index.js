@@ -6,14 +6,18 @@ import {
   ContentText,
   HomeContent,
   ContentImage,
+  Name,
 } from "./style";
 import OldPC from "../../img/old-pc.svg";
+import WebDev from "../../img/web-dev.svg";
 
 export const Home = () => {
   return (
     <Wrapper>
       <HomeContent>
-        <ContentHeader>Shukur Aliyev</ContentHeader>
+        <ContentHeader>
+          <Name>Shukur</Name> Aliyev
+        </ContentHeader>
         <ContentText>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem
           recusandae dicta, non, optio neque accusamus officia aut quidem
@@ -21,7 +25,7 @@ export const Home = () => {
           quia deleniti eum.
         </ContentText>
       </HomeContent>
-      <ContentImage src={OldPC} />
+      <ContentImage src={WebDev} />
     </Wrapper>
   );
 };
