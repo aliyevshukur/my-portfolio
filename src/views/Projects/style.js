@@ -6,7 +6,10 @@ export const ProjectWrapper = styled(Wrapper)`
 `;
 
 export const ContentWrapper = styled.div`
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
 `;

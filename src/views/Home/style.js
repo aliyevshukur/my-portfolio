@@ -21,7 +21,7 @@ export const HomeContent = styled.div`
 `;
 
 export const ContentHeader = styled.h1`
-  font-size: 48px;
+  font-size: 64px;
   color: ${(props) => props.theme.darkText};
   margin-bottom: ${(props) => props.theme.spacing(1)}px;
 `;

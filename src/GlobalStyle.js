@@ -32,7 +32,7 @@ const GlobalStyle = createGlobalStyle`
   html, body, #root {
     height: 100%;
     overflow: hidden;
-    font-family: 'Heebo', sans-serif;
+    font-family: 'Yusei Magic', sans-serif;
   }
 `;
 
