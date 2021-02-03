@@ -1,9 +1,15 @@
 import styled from "styled-components";
+import { devices } from "../GlobalStyle";
 
 export const PageContainer = styled.div`
   width: 100%;
   height: 100%;
   position: relative;
+  z-index: 1;
+  margin-left: ${({ theme }) => theme.leftNavWidth};
+  @media ${devices.tablet} {
+    margin-left: 0;
+  }
 `;
 
 export const Wrapper = styled.div`
@@ -14,6 +20,7 @@ export const Wrapper = styled.div`
   right: 0;
   z-index: -1;
   padding: ${(props) => props.theme.spacing(2)}px;
+  overflow: hidden;
 
   /* SLIDE DOWN */
   &.slide-down-enter {
