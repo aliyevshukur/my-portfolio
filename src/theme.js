@@ -4,7 +4,7 @@ const theme = {
   darkText: "#a9a3af",
   lightText: "#FBFEF9",
   borderColor: "#06AED5",
-  leftNavWidth: "110px",
+  leftNavWidth: "90px",
   spacing: (n) => n * 20,
 };
 
