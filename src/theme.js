@@ -1,7 +1,7 @@
 const theme = {
   primary: "#242331",
   secondary: "#473BF0",
-  darkText: "#a9a3af",
+  darkText: "#FFF",
   lightText: "#FBFEF9",
   borderColor: "#06AED5",
   leftNavWidth: "90px",

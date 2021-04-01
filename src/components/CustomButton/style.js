@@ -39,4 +39,5 @@ export const ButtonShadow = styled.div`
 export const ButtonText = styled.p`
   text-transform: uppercase;
   font-size: ${({ fontSize }) => fontSize || "13px"};
+  font-weight: bold;
 `;

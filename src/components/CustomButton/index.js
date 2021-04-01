@@ -15,7 +15,7 @@ export const CustomButton = ({
         <ButtonText fontSize={fontSize}>{title}</ButtonText>
       </ButtonMain>
       {/* BG color changes to purple when type="action" */}
-      <ButtonShadow type={type} />
+      {/* <ButtonShadow type={type} /> */}
     </ButtonWrapper>
   );
 };
