@@ -3,22 +3,19 @@ import { devices } from "../GlobalStyle";
 
 export const PageContainer = styled.div`
   width: 100%;
-  height: 100%;
   position: relative;
-  z-index: 1;
-  margin-left: ${({ theme }) => theme.leftNavWidth};
   @media ${devices.tablet} {
     margin-left: 0;
   }
 `;
 
 export const Wrapper = styled.div`
+  box-shadow: inset 5px -5px 15px 0px rgba(0, 0, 0, 0.25);
   width: 100%;
   height: 100%;
   position: absolute;
   top: 0;
   right: 0;
-  z-index: -1;
   padding: ${(props) => props.theme.spacing(2)}px;
   overflow: hidden;
 

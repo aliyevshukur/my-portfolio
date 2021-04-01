@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 
 const Wrapper = styled.div`
   margin-bottom: ${(props) => (props.last ? 0 : 70)}px;
-  z-index: 1;
 `;
 
 const NavIcon = styled.div`

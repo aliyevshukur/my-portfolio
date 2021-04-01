@@ -4,7 +4,6 @@ import { devices } from "../../GlobalStyle";
 
 export const NavWrapper = styled.div`
   height: 100%;
-  position: fixed;
 
   @media ${devices.tablet} {
     position: absolute;
@@ -12,7 +11,6 @@ export const NavWrapper = styled.div`
     left: 0;
     width: ${(props) => (props.toggleMenu ? "100%" : "auto")};
     background: rgba(0, 0, 0, 0.5);
-    z-index: 2;
   }
 `;
 
