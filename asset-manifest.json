@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.js": "/my-portfolio/static/js/main.be20521b.chunk.js",
-    "main.js.map": "/my-portfolio/static/js/main.be20521b.chunk.js.map",
-    "runtime-main.js": "/my-portfolio/static/js/runtime-main.8b00eace.js",
-    "runtime-main.js.map": "/my-portfolio/static/js/runtime-main.8b00eace.js.map",
-    "static/js/2.5903b2e6.chunk.js": "/my-portfolio/static/js/2.5903b2e6.chunk.js",
-    "static/js/2.5903b2e6.chunk.js.map": "/my-portfolio/static/js/2.5903b2e6.chunk.js.map",
-    "index.html": "/my-portfolio/index.html",
-    "precache-manifest.593fa797a603e32399ce96b94e5a8764.js": "/my-portfolio/precache-manifest.593fa797a603e32399ce96b94e5a8764.js",
-    "service-worker.js": "/my-portfolio/service-worker.js",
-    "static/js/2.5903b2e6.chunk.js.LICENSE.txt": "/my-portfolio/static/js/2.5903b2e6.chunk.js.LICENSE.txt",
-    "static/media/contact-me.svg": "/my-portfolio/static/media/contact-me.253d8c08.svg",
-    "static/media/not-found-robot.svg": "/my-portfolio/static/media/not-found-robot.3d9aef60.svg",
-    "static/media/old-pc.svg": "/my-portfolio/static/media/old-pc.8ed36326.svg",
-    "static/media/web-dev.svg": "/my-portfolio/static/media/web-dev.4742ab03.svg"
+    "main.js": "/static/js/main.c6f064bb.chunk.js",
+    "main.js.map": "/static/js/main.c6f064bb.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.6b3488d1.js",
+    "runtime-main.js.map": "/static/js/runtime-main.6b3488d1.js.map",
+    "static/js/2.fcbefa3d.chunk.js": "/static/js/2.fcbefa3d.chunk.js",
+    "static/js/2.fcbefa3d.chunk.js.map": "/static/js/2.fcbefa3d.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.7ec3dfd1e593b9110074e50077bcefaf.js": "/precache-manifest.7ec3dfd1e593b9110074e50077bcefaf.js",
+    "service-worker.js": "/service-worker.js",
+    "static/js/2.fcbefa3d.chunk.js.LICENSE.txt": "/static/js/2.fcbefa3d.chunk.js.LICENSE.txt",
+    "static/media/contact-me.svg": "/static/media/contact-me.253d8c08.svg",
+    "static/media/not-found-robot.svg": "/static/media/not-found-robot.3d9aef60.svg",
+    "static/media/old-pc.svg": "/static/media/old-pc.8ed36326.svg",
+    "static/media/web-dev.svg": "/static/media/web-dev.4742ab03.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.8b00eace.js",
-    "static/js/2.5903b2e6.chunk.js",
-    "static/js/main.be20521b.chunk.js"
+    "static/js/runtime-main.6b3488d1.js",
+    "static/js/2.fcbefa3d.chunk.js",
+    "static/js/main.c6f064bb.chunk.js"
   ]
 }
