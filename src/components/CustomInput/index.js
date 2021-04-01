@@ -1,6 +1,11 @@
 import React from "react";
-import { InputWrapper } from "style.js";
+import { InputWrapper, InputLabel, Input } from "./style.js";
 
-export const CustomInput = () => {
-  return <InputWrapper></InputWrapper>;
+export const CustomInput = ({ label, type, value }) => {
+  return (
+    <InputWrapper>
+      <InputLabel>{label}</InputLabel>
+      <Input value={value} type={type} />
+    </InputWrapper>
+  );
 };

@@ -9,7 +9,7 @@ export const ButtonWrapper = styled.a`
   height: ${({ height }) => height};
   /* line-height: ${({ height }) => height}; */
 
-  /* If button is action button flip the colors */
+  /* If button type is action button swap the colors */
   background-color: ${({ theme, type }) =>
     type === "action" ? theme.secondary : theme.darkText};
   color: ${({ theme, type }) =>
@@ -17,6 +17,7 @@ export const ButtonWrapper = styled.a`
   border-radius: 3px;
   text-align: center;
   cursor: pointer;
+  ${(props) => props.style}
 `;
 
 export const ButtonMain = styled.div`
