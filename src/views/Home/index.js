@@ -8,14 +8,12 @@ import {
   ContentImage,
   Name,
 } from "./style";
-import OldPC from "../../img/old-pc.svg";
 import WebDev from "../../img/web-dev.svg";
-import Bait from "../../img/bait.gif";
 
 export const Home = () => {
   return (
     <Wrapper>
-      {/* <HomeContent>
+      <HomeContent>
         <ContentHeader>
           <Name>Shukur</Name> Aliyev
         </ContentHeader>
@@ -26,8 +24,7 @@ export const Home = () => {
           quia deleniti eum.
         </ContentText>
       </HomeContent>
-      <ContentImage src={WebDev} /> */}
-      <img src={Bait} />
+      <ContentImage src={WebDev} />
     </Wrapper>
   );
 };

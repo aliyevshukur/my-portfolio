@@ -21,10 +21,10 @@ export const Contact = () => {
       </ContactHero>
       <ContactForm>
         <FormSection>
-          <CustomInput label="name" />
-          <CustomInput label="surname" />
+          <CustomInput type="half" label="name" />
+          <CustomInput type="half" label="surname" />
         </FormSection>
-        <CustomInput type="long" label="email" />
+        <CustomInput label="email" />
         <CustomTextArea
           id="details"
           type="text-area"
@@ -40,7 +40,7 @@ export const Contact = () => {
           fontSize="18px"
           style={() =>
             css`
-              align-self: end;
+              align-self: flex-end;
             `
           }
         />

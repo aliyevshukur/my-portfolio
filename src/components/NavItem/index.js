@@ -13,9 +13,9 @@ const NavIcon = styled.div`
 
 const NavLink = styled(Link)``;
 
-export const NavItem = ({ icon, to, isActive, last }) => {
+export const NavItem = ({ icon, to, isActive, last, onClick }) => {
   return (
-    <Wrapper last={last}>
+    <Wrapper last={last} onClick={onClick}>
       <NavLink to={to}>
         <NavIcon isActive={isActive}>{icon}</NavIcon>
       </NavLink>

@@ -78,6 +78,7 @@ export const LeftNavigation = withTheme(() => {
                 icon={icon}
                 last={last}
                 key={ind}
+                onClick={() => setToggleMenu(false)}
               />
             ))}
           </IconContext.Provider>

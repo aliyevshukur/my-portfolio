@@ -24,6 +24,7 @@ export const NavContent = styled.nav`
   align-items: center;
   font-size: 24px;
   box-shadow: 2px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  z-index: 1;
 
   &.menu-open-enter {
     transform: translateX(-110%);
