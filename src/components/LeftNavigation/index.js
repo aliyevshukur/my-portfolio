@@ -52,6 +52,9 @@ export const LeftNavigation = withTheme(() => {
   ];
 
   useEffect(() => {
+    if (window.innerWidth < size.tablet) {
+      setToggleMenu(false);
+    }
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);

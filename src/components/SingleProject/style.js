@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { devices } from "../../GlobalStyle";
 
 export const ProjectWrapper = styled.div`
   width: 500px;
@@ -32,7 +33,7 @@ export const Buttons = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  margin-left: 30px;
+  /* margin-left: 2px; */
 `;
 
 export const Name = styled.p`
@@ -45,7 +46,7 @@ export const Name = styled.p`
 export const Desc = styled.p`
   color: ${({ theme }) => theme.lightText};
   font-size: 13px;
-  line-height: 120%;
+  line-height: 1.2em;
+  max-height: 2.4em;
   overflow: hidden;
-  text-overflow: ellipsis;
 `;
