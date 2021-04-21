@@ -21,6 +21,7 @@ export const NavItem = ({
         lockLink();
       }}
       isLocked={isLocked}
+      isActive={isActive}
     >
       <NavLink to={to}>
         <NavIcon isActive={isActive}>{icon}</NavIcon>
@@ -53,6 +54,7 @@ const Tooltip = styled.div`
 const Wrapper = styled.div`
   margin-bottom: ${(props) => (props.last ? 0 : 70)}px;
   ${({ isLocked }) => isLocked && "pointer-events: none"};
+  ${({ isActive }) => isActive && "pointer-events: none"};
   position: relative;
 
   &:hover > ${Tooltip} {

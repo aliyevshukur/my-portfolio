@@ -76,6 +76,12 @@ export const LeftNavigation = withTheme(() => {
     setTimeout(() => toggleLinkLock(false), 1000);
   };
 
+  const onNavItemClick = () => {
+    if (isTabletMode) {
+      setToggleMenu(false);
+    }
+  };
+
   return (
     <NavWrapper toggleMenu={toggleMenu}>
       <BurgerMenu
@@ -97,7 +103,7 @@ export const LeftNavigation = withTheme(() => {
                 icon={icon}
                 last={last}
                 key={ind}
-                onClick={() => isTabletMode && setToggleMenu(false)}
+                onClick={() => onNavItemClick()}
                 isLocked={isLocked}
                 lockLink={lockLink}
                 tooltip={tooltip}
