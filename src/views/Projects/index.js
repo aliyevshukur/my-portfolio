@@ -15,7 +15,6 @@ export const Projects = () => {
     },
     {
       name: "Notes App",
-      liveLink: "",
       desc: "Website for taking simple notes.",
       liveLink: "",
       githubLink: "https://github.com/aliyevshukur/note-taking-website",

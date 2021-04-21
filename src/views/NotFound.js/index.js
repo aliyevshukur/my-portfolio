@@ -2,7 +2,6 @@ import React, { useContext, useEffect } from "react";
 
 import {
   Wrapper,
-  MehIcon,
   Button,
   StyledLink,
   NotFoundContent,
@@ -21,10 +20,8 @@ export const NotFound = () => {
   }, [setVisible]);
   return (
     <Wrapper>
-      {/* <MehIcon /> */}
       <NotFoundImage src={NotFoundRobot} />
       <NotFoundContent>
-        {/* <h1>404 not found</h1> */}
         <Button>
           <StyledLink to="/">Go Home</StyledLink>
         </Button>

@@ -38,7 +38,7 @@ const GlobalStyle = createGlobalStyle`
   }
   
   @font-face {
-    font-family: "Archia";
+    font-family: "Open-Sans";
     src: local('Archia'), url(./fonts/archia-regular-webfont.ttf) format('truetype');
   }
 

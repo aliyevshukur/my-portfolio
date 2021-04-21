@@ -10,17 +10,26 @@ import { NavProvider } from "./components/LeftNavigation/NavContext";
 class App extends Component {
   state = {
     isVisible: true,
+    navItems: [],
   };
 
   setVisible = (value) => {
-    console.log("inside set visible", value);
     this.setState({ isVisible: value });
+  };
+
+  setNavItems = (value) => {
+    this.setState({ navItems: value });
   };
 
   render() {
     return (
       <NavProvider
-        value={{ isVisible: this.state.isVisible, setVisible: this.setVisible }}
+        value={{
+          isVisible: this.state.isVisible,
+          setVisible: this.setVisible,
+          navItems: this.state.navItems,
+          setNavItems: this.setNavItems,
+        }}
       >
         <ThemeProvider theme={theme} component={Wrapper}>
           <GlobalStye />

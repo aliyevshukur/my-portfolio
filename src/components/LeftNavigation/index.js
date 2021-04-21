@@ -12,23 +12,14 @@ import { size } from "../../GlobalStyle";
 import { NavItem } from "../NavItem";
 
 export const LeftNavigation = withTheme(() => {
-  const [toggleMenu, setToggleMenu] = useState(true); // Shows, hides naivgation with animation
+  const [toggleMenu, setToggleMenu] = useState(true);
+  const [isTabletMode, setIsTabletMode] = useState(false);
+  const [isLocked, toggleLinkLock] = useState();
+  const { isVisible, setNavItems } = useContext(NavContext);
   const { pathname } = useLocation();
-  const { isVisible } = useContext(NavContext); // Hides navigation when it's not needed
 
   const routes = ["/", "/projects", "/contact"];
   const currentScreen = routes.indexOf(pathname);
-
-  useEffect(() => {
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  const handleResize = () => {
-    if (window.innerWidth < size.tablet) setToggleMenu(false);
-    else setToggleMenu(true);
-  };
-
   const navItems = [
     {
       to: {
@@ -37,6 +28,7 @@ export const LeftNavigation = withTheme(() => {
       },
       isActive: pathname === "/",
       icon: <FiCpu />,
+      tooltip: "Home",
     },
     {
       to: {
@@ -45,6 +37,7 @@ export const LeftNavigation = withTheme(() => {
       },
       isActive: pathname === "/projects",
       icon: <FiGitBranch />,
+      tooltip: "Projects",
     },
     {
       to: {
@@ -53,9 +46,35 @@ export const LeftNavigation = withTheme(() => {
       },
       isActive: pathname === "/contact",
       icon: <FiBookOpen />,
+      tooltip: "Contact",
       last: true,
     },
   ];
+
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
+    setNavItems(navItems);
+  }, [currentScreen]);
+
+  const handleResize = () => {
+    if (window.innerWidth < size.tablet) {
+      setToggleMenu(false);
+      setIsTabletMode(true);
+    } else {
+      setToggleMenu(true);
+      setIsTabletMode(false);
+    }
+  };
+
+  // Prevents users to spam switching between screens by locking navigation
+  const lockLink = () => {
+    toggleLinkLock(true);
+    setTimeout(() => toggleLinkLock(false), 1000);
+  };
 
   return (
     <NavWrapper toggleMenu={toggleMenu}>
@@ -71,14 +90,17 @@ export const LeftNavigation = withTheme(() => {
       >
         <NavContent isVisible={isVisible}>
           <IconContext.Provider value={{ size: "1.3em" }}>
-            {navItems.map(({ to, isActive, icon, last }, ind) => (
+            {navItems.map(({ to, isActive, icon, tooltip, last }, ind) => (
               <NavItem
                 to={to}
                 isActive={isActive}
                 icon={icon}
                 last={last}
                 key={ind}
-                onClick={() => setToggleMenu(false)}
+                onClick={() => isTabletMode && setToggleMenu(false)}
+                isLocked={isLocked}
+                lockLink={lockLink}
+                tooltip={tooltip}
               />
             ))}
           </IconContext.Provider>

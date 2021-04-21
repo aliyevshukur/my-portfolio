@@ -18,6 +18,9 @@ export const HomeWrapper = styled(Wrapper)`
 export const HomeContent = styled.div`
   max-width: 600px;
   margin-top: ${(props) => props.theme.spacing(3)}px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 `;
 
 export const ContentHeader = styled.h1`
@@ -29,6 +32,7 @@ export const ContentHeader = styled.h1`
 export const ContentText = styled.p`
   font-size: 24px;
   color: ${(props) => props.theme.darkText};
+  margin-bottom: ${(props) => props.theme.spacing(1)}px;
 `;
 
 export const ContentImage = styled.img`
