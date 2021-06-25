@@ -52,8 +52,9 @@ export const LeftNavigation = withTheme(() => {
   ];
 
   useEffect(() => {
-    if (window.innerWidth < size.tablet) {
+    if (window.innerWidth <= size.tablet) {
       setToggleMenu(false);
+      setIsTabletMode(true);
     }
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
@@ -64,9 +65,10 @@ export const LeftNavigation = withTheme(() => {
   }, [currentScreen]);
 
   const handleResize = () => {
-    if (window.innerWidth < size.tablet) {
+    if (window.innerWidth <= size.tablet) {
       setToggleMenu(false);
       setIsTabletMode(true);
+      console.log("Is", isTabletMode);
     } else {
       setToggleMenu(true);
       setIsTabletMode(false);
@@ -80,6 +82,7 @@ export const LeftNavigation = withTheme(() => {
   };
 
   const onNavItemClick = () => {
+    console.log("Is tablet", isTabletMode);
     if (isTabletMode) {
       setToggleMenu(false);
     }

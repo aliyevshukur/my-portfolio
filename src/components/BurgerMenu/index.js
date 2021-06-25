@@ -4,8 +4,8 @@ import styled from "styled-components";
 import { devices } from "../../GlobalStyle";
 
 const BurgerWrapper = styled.div`
-  width: 48px;
-  height: 48px;
+  width: 42px;
+  height: 42px;
   display: none;
   position: absolute;
   top: 20px;
@@ -24,22 +24,27 @@ const BurgerWrapper = styled.div`
     width: ${(props) => (props.isToggled ? "55%" : "100%")};
     transition: width 0.5s;
   }
+
   div:nth-child(1) {
     transform: ${(props) =>
       props.isToggled ? "rotate(-45deg)" : "rotate(0deg)"};
     /* translateY(-50%); */
+    border-radius: 5px 5px 0 0;
   }
+
   div:nth-child(3) {
     transform: ${(props) =>
       props.isToggled ? "rotate(45deg)" : "rotate(0deg)"};
+    border-radius: 0 0 5px 5px;
   }
+
   div:nth-child(2) {
     align-self: center;
   }
 `;
 const BurgerItem = styled.div`
   width: 100%;
-  height: 7px;
+  height: 6px;
   background-color: ${(props) => props.theme.secondary};
 `;
 
