@@ -4,7 +4,7 @@ import { useLocation } from "react-router-dom";
 import { FiBookOpen, FiCpu, FiGitBranch } from "react-icons/fi";
 import { IconContext } from "react-icons";
 
-import { NavContent, NavWrapper } from "./style";
+import { NavContent, NavWrapper, NavOverlay } from "./style";
 import { BurgerMenu } from "../BurgerMenu";
 import { NavContext } from "./NavContext";
 import { CSSTransition } from "react-transition-group";
@@ -14,7 +14,8 @@ import { NavItem } from "../NavItem";
 export const LeftNavigation = withTheme(() => {
   const [toggleMenu, setToggleMenu] = useState(true);
   const [isTabletMode, setIsTabletMode] = useState(false);
-  const [isLocked, toggleLinkLock] = useState();
+  const [isNavItemLocked, toggleNavItemLock] = useState();
+
   const { isVisible, setNavItems } = useContext(NavContext);
   const { pathname } = useLocation();
 
@@ -68,7 +69,6 @@ export const LeftNavigation = withTheme(() => {
     if (window.innerWidth <= size.tablet) {
       setToggleMenu(false);
       setIsTabletMode(true);
-      console.log("Is", isTabletMode);
     } else {
       setToggleMenu(true);
       setIsTabletMode(false);
@@ -76,13 +76,12 @@ export const LeftNavigation = withTheme(() => {
   };
 
   // Prevents users to spam switching between screens by locking navigation
-  const lockLink = () => {
-    toggleLinkLock(true);
-    setTimeout(() => toggleLinkLock(false), 1000);
+  const lockNavItem = () => {
+    toggleNavItemLock(true);
+    setTimeout(() => toggleNavItemLock(false), 1000);
   };
 
   const onNavItemClick = () => {
-    console.log("Is tablet", isTabletMode);
     if (isTabletMode) {
       setToggleMenu(false);
     }
@@ -90,6 +89,7 @@ export const LeftNavigation = withTheme(() => {
 
   return (
     <NavWrapper toggleMenu={toggleMenu}>
+      {isTabletMode && toggleMenu && <NavOverlay />}
       <BurgerMenu
         onClick={() => setToggleMenu(!toggleMenu)}
         isToggled={toggleMenu}
@@ -110,8 +110,8 @@ export const LeftNavigation = withTheme(() => {
                 last={last}
                 key={ind}
                 onClick={() => onNavItemClick()}
-                isLocked={isLocked}
-                lockLink={lockLink}
+                isLocked={isNavItemLocked}
+                lockLink={lockNavItem}
                 tooltip={tooltip}
               />
             ))}

@@ -4,6 +4,8 @@ import { devices } from "../../GlobalStyle";
 
 export const NavWrapper = styled.div`
   height: 100%;
+  overflow: visible;
+  z-index: 1;
 
   @media ${devices.tablet} {
     position: absolute;
@@ -49,4 +51,14 @@ export const NavContent = styled.nav`
     top: 0;
     left: 0;
   }
+`;
+
+export const NavOverlay = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* z-index: -1; */
 `;
