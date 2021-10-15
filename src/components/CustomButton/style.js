@@ -19,7 +19,7 @@ export const ButtonWrapper = styled.a`
   background-color: ${({ theme, type }) =>
     type === "action" ? theme.secondary : theme.darkText};
   color: ${({ theme, type }) =>
-    type === "action" ? theme.darkText : theme.secondary};
+    type === "action" ? theme.primary : theme.primary};
 
   @media ${devices.mobileL} {
     min-width: ${({ width }) => `${width.slice(0, -2) * 0.8}px`};

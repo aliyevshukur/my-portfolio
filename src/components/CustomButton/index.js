@@ -9,8 +9,8 @@ export const CustomButton = ({
   style,
   fontSize,
   onClick,
-  to,
-  as,
+  href,
+  target,
 }) => {
   return (
     <ButtonWrapper
@@ -19,8 +19,8 @@ export const CustomButton = ({
       height={height}
       style={style}
       onClick={onClick}
-      to={to}
-      as={as}
+      href={href}
+      target={target}
     >
       <ButtonMain>
         <ButtonText fontSize={fontSize}>{title}</ButtonText>

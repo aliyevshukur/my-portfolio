@@ -18,7 +18,7 @@ export const InputWrapper = styled.div`
 `;
 export const InputLabel = styled.label`
   text-transform: uppercase;
-  color: ${({ theme }) => theme.darkerText};
+  color: ${({ theme }) => theme.darkText};
   margin-bottom: 14px;
 
   @media ${devices.mobileL} {
@@ -34,14 +34,14 @@ export const InputLabel = styled.label`
   }
 `;
 export const Input = styled.input`
-  background-color: ${({ theme }) => theme.darkText};
+  background-color: ${({ theme }) => theme.primary};
   padding: 14px 8px;
   border-radius: 3px;
-  border: 0px;
+  border: 1px solid ${({ theme }) => theme.darkText};
 
   &:focus {
     outline: none;
-    padding: 13px 7px;
+    /* padding: 13px 7px; */
     border: 1px solid ${({ theme }) => theme.secondary};
   }
 

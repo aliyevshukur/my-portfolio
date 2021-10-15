@@ -10,7 +10,6 @@ export const PageContainer = styled.div`
 `;
 
 export const Wrapper = styled.div`
-  box-shadow: inset 5px -5px 15px 0px rgba(0, 0, 0, 0.25);
   width: 100%;
   height: 100%;
   position: absolute;

@@ -3,11 +3,11 @@ import { withTheme } from "styled-components";
 import { useLocation } from "react-router-dom";
 import { FiBookOpen, FiCpu, FiGitBranch } from "react-icons/fi";
 import { IconContext } from "react-icons";
+import { CSSTransition } from "react-transition-group";
 
 import { NavContent, NavWrapper, NavOverlay } from "./style";
 import { BurgerMenu } from "../BurgerMenu";
 import { NavContext } from "./NavContext";
-import { CSSTransition } from "react-transition-group";
 import { size } from "../../GlobalStyle";
 import { NavItem } from "../NavItem";
 
@@ -16,12 +16,11 @@ export const LeftNavigation = withTheme(() => {
   const [isTabletMode, setIsTabletMode] = useState(false);
   const [isNavItemLocked, toggleNavItemLock] = useState();
 
-  const { isVisible, setNavItems } = useContext(NavContext);
+  const { isVisible, navItems, setNavItems, routes } = useContext(NavContext);
   const { pathname } = useLocation();
 
-  const routes = ["/", "/projects", "/contact"];
   const currentScreen = routes.indexOf(pathname);
-  const navItems = [
+  const navItemsData = [
     {
       to: {
         pathname: "/",
@@ -62,7 +61,7 @@ export const LeftNavigation = withTheme(() => {
   }, []);
 
   useEffect(() => {
-    setNavItems(navItems);
+    setNavItems(navItemsData);
   }, [currentScreen]);
 
   const handleResize = () => {
@@ -81,6 +80,7 @@ export const LeftNavigation = withTheme(() => {
     setTimeout(() => toggleNavItemLock(false), 1000);
   };
 
+  // Hide navigation on switching pages in tablet mode
   const onNavItemClick = () => {
     if (isTabletMode) {
       setToggleMenu(false);
@@ -90,10 +90,12 @@ export const LeftNavigation = withTheme(() => {
   return (
     <NavWrapper toggleMenu={toggleMenu}>
       {isTabletMode && toggleMenu && <NavOverlay />}
+
       <BurgerMenu
         onClick={() => setToggleMenu(!toggleMenu)}
         isToggled={toggleMenu}
       />
+
       <CSSTransition
         in={toggleMenu}
         unmountOnExit

@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 import {
   HomeWrapper as Wrapper,
@@ -15,25 +15,25 @@ import { NavContext } from "../../components/LeftNavigation/NavContext";
 
 export const Home = () => {
   const { navItems } = useContext(NavContext);
+  const history = useHistory();
+
   return (
     <Wrapper>
       <HomeContent>
         <ContentHeader>
-          <Name>Shukur</Name> Aliyev
+          Hi, I'm <Name>Shukur</Name> Aliyev
         </ContentHeader>
         <ContentText>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem
-          recusandae dicta, non, optio neque accusamus officia aut quidem
-          corporis fugiat sit laboriosam voluptas totam? Consequatur id libero
-          quia deleniti eum.
+          Front end developer who loves to write clean and efficient code
         </ContentText>
         <CustomButton
-          as={Link}
-          to={navItems[1]?.to ? navItems[1]?.to : ""}
           title="See Projects"
           width="140px"
           height="55px"
           type="action"
+          onClick={() => {
+            history.push(navItems[1]?.to);
+          }}
         />
       </HomeContent>
       <ContentImage src={WebDev} />

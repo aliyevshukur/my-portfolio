@@ -2,6 +2,7 @@ import React from "react";
 
 import { ProjectWrapper, ContentWrapper, PageLabel } from "./style";
 import { SingleProject } from "../../components/SingleProject";
+import travel from "../../img/travel.png";
 
 export const Projects = () => {
   // Every 2 projects must be written as seperate array
@@ -12,6 +13,14 @@ export const Projects = () => {
         "Mobile application that gathers hotels around the world for users to explore.",
       liveLink: "",
       githubLink: "https://github.com/aliyevshukur/neotravel",
+    },
+    {
+      name: "Travel Overload",
+      desc:
+        "Place to share your experiences and read about others travel stories. ",
+      liveLink: "https://travel-overload.netlify.app",
+      githubLink: "https://github.com/aliyevshukur/travel-overload",
+      image: travel,
     },
     {
       name: "Notes App",
@@ -32,7 +41,7 @@ export const Projects = () => {
       name: "Travel Overload",
       desc:
         "Place to share your experiences and read about others travel stories. ",
-      liveLink: "",
+      liveLink: "https://travel-overload.netlify.app/home",
       githubLink: "https://github.com/aliyevshukur/travel-overload",
     },
 
@@ -42,14 +51,6 @@ export const Projects = () => {
         "Handy grocery list application. Add products, select quantities and check off items.",
       liveLink: "",
       githubLink: "https://github.com/aliyevshukur/shop-list",
-    },
-
-    {
-      name: "Travel Overload",
-      desc:
-        "Place to share your experiences and read about others travel stories. ",
-      liveLink: "",
-      githubLink: "https://github.com/aliyevshukur/travel-overload",
     },
   ];
 
@@ -64,6 +65,7 @@ export const Projects = () => {
             liveLink={project.liveLink}
             githubLink={project.githubLink}
             key={ind}
+            image={project.image}
           />
         ))}
       </ContentWrapper>

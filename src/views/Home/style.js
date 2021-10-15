@@ -24,7 +24,7 @@ export const HomeContent = styled.div`
 `;
 
 export const ContentHeader = styled.h1`
-  font-size: 64px;
+  font-size: 55px;
   color: ${(props) => props.theme.darkText};
   margin-bottom: ${(props) => props.theme.spacing(1)}px;
 
@@ -38,9 +38,9 @@ export const ContentHeader = styled.h1`
 `;
 
 export const ContentText = styled.p`
-  font-size: 24px;
+  font-size: 18px;
   color: ${(props) => props.theme.darkText};
-  margin-bottom: ${(props) => props.theme.spacing(1)}px;
+  margin-bottom: ${(props) => props.theme.spacing(3)}px;
 
   @media ${devices.mobileL} {
     font-size: 20px;

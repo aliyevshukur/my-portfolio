@@ -1,5 +1,5 @@
 import React from "react";
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 
 import { Link } from "react-router-dom";
 import { devices } from "../../GlobalStyle";
@@ -52,10 +52,7 @@ const Tooltip = styled.div`
   opacity: 0%;
   border-radius: 0 10px 10px 0;
   transition: width 0.3s ease-out, opacity 0.3s;
-
-  box-shadow: 8px -10px 10px -10px rgba(0, 0, 0, 0.75),
-    8px 0px 10px -10px rgba(0, 0, 0, 0.75),
-    8px 10px 10px -10px rgba(0, 0, 0, 0.75);
+  box-shadow: rgba(99, 99, 99, 0.2) 8px 0px 8px 0px;
 `;
 
 const Wrapper = styled.div`

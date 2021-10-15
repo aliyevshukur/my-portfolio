@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { Wrapper } from "../defaultPageStyle";
 
 export const ProjectWrapper = styled(Wrapper)`
-  background-color: ${(props) => props.theme.darkText};
+  background-color: ${(props) => props.theme.primary};
   height: 100%;
   overflow: auto;
   padding: 0;

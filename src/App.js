@@ -11,6 +11,7 @@ class App extends Component {
   state = {
     isVisible: true,
     navItems: [],
+    routes: ["/", "/projects", "/contact"],
   };
 
   setVisible = (value) => {
@@ -29,6 +30,7 @@ class App extends Component {
           setVisible: this.setVisible,
           navItems: this.state.navItems,
           setNavItems: this.setNavItems,
+          routes: this.state.routes,
         }}
       >
         <ThemeProvider theme={theme} component={Wrapper}>
