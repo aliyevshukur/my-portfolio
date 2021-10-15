@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "82049cce7aefec512936e6265a515c9a",
+    "revision": "4b27e20873c21149e89f6254fd22b18e",
     "url": "/index.html"
   },
   {
-    "revision": "508374ab08220671cc2f",
-    "url": "/static/js/2.e5528cf7.chunk.js"
+    "revision": "fe0fc50f34009c28d652",
+    "url": "/static/js/2.3b6ffc0c.chunk.js"
   },
   {
     "revision": "9b318b6fb13190fe82c0677e9264b3c7",
-    "url": "/static/js/2.e5528cf7.chunk.js.LICENSE.txt"
+    "url": "/static/js/2.3b6ffc0c.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "0026006964597bceddb0",
-    "url": "/static/js/main.d06d9aec.chunk.js"
+    "revision": "105e64a239f160852ca1",
+    "url": "/static/js/main.23592efc.chunk.js"
   },
   {
     "revision": "efe25b4b8d1f7af9da4b",
@@ -24,8 +24,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/contact-me.253d8c08.svg"
   },
   {
+    "revision": "caa466efe0d2435fe51364f122db3070",
+    "url": "/static/media/neotravel.caa466ef.png"
+  },
+  {
     "revision": "3d9aef603b1d91489175d0ddf2ca525f",
     "url": "/static/media/not-found-robot.3d9aef60.svg"
+  },
+  {
+    "revision": "4371350898d645e57e851826106bb9fd",
+    "url": "/static/media/travel.43713508.png"
   },
   {
     "revision": "4742ab03353c6c8cc3270475872e2f93",

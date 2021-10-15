@@ -1,22 +1,24 @@
 {
   "files": {
-    "main.js": "/static/js/main.d06d9aec.chunk.js",
-    "main.js.map": "/static/js/main.d06d9aec.chunk.js.map",
+    "main.js": "/static/js/main.23592efc.chunk.js",
+    "main.js.map": "/static/js/main.23592efc.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.6b3488d1.js",
     "runtime-main.js.map": "/static/js/runtime-main.6b3488d1.js.map",
-    "static/js/2.e5528cf7.chunk.js": "/static/js/2.e5528cf7.chunk.js",
-    "static/js/2.e5528cf7.chunk.js.map": "/static/js/2.e5528cf7.chunk.js.map",
+    "static/js/2.3b6ffc0c.chunk.js": "/static/js/2.3b6ffc0c.chunk.js",
+    "static/js/2.3b6ffc0c.chunk.js.map": "/static/js/2.3b6ffc0c.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.14145d16d3502f64f204cd3c257bf128.js": "/precache-manifest.14145d16d3502f64f204cd3c257bf128.js",
+    "precache-manifest.32948e86b74fd25d209c3e2d874825aa.js": "/precache-manifest.32948e86b74fd25d209c3e2d874825aa.js",
     "service-worker.js": "/service-worker.js",
-    "static/js/2.e5528cf7.chunk.js.LICENSE.txt": "/static/js/2.e5528cf7.chunk.js.LICENSE.txt",
+    "static/js/2.3b6ffc0c.chunk.js.LICENSE.txt": "/static/js/2.3b6ffc0c.chunk.js.LICENSE.txt",
     "static/media/contact-me.svg": "/static/media/contact-me.253d8c08.svg",
+    "static/media/neotravel.png": "/static/media/neotravel.caa466ef.png",
     "static/media/not-found-robot.svg": "/static/media/not-found-robot.3d9aef60.svg",
+    "static/media/travel.png": "/static/media/travel.43713508.png",
     "static/media/web-dev.svg": "/static/media/web-dev.4742ab03.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.6b3488d1.js",
-    "static/js/2.e5528cf7.chunk.js",
-    "static/js/main.d06d9aec.chunk.js"
+    "static/js/2.3b6ffc0c.chunk.js",
+    "static/js/main.23592efc.chunk.js"
   ]
 }
