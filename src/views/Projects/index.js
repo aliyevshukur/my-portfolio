@@ -3,6 +3,7 @@ import React from "react";
 import { ProjectWrapper, ContentWrapper, PageLabel } from "./style";
 import { SingleProject } from "../../components/SingleProject";
 import travel from "../../img/travel.png";
+import neotravel from "../../img/neotravel.png";
 
 export const Projects = () => {
   // Every 2 projects must be written as seperate array
@@ -13,6 +14,7 @@ export const Projects = () => {
         "Mobile application that gathers hotels around the world for users to explore.",
       liveLink: "",
       githubLink: "https://github.com/aliyevshukur/neotravel",
+      image: neotravel,
     },
     {
       name: "Travel Overload",
