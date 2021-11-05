@@ -23,6 +23,16 @@ export const HomeContent = styled.div`
   align-items: flex-start;
 `;
 
+export const ThemeSwitchBtn = styled.a`
+  color: ${({ theme }) => theme.secondary};
+  cursor: pointer;
+  align-self: start;
+
+  &:hover {
+    filter: brightness(90%);
+  }
+`;
+
 export const ContentHeader = styled.h1`
   font-size: 55px;
   color: ${(props) => props.theme.darkText};
