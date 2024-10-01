@@ -1,15 +1,17 @@
-import React, { useContext, useState, useEffect } from "react";
-import { withTheme } from "styled-components";
-import { useLocation } from "react-router-dom";
-import { FiBookOpen, FiCpu, FiGitBranch } from "react-icons/fi";
+import React, { useContext, useEffect, useState } from "react";
 import { IconContext } from "react-icons";
+import { AiOutlineContacts } from "react-icons/ai";
+import { PiBlueprint } from "react-icons/pi";
+import { TbHome } from "react-icons/tb";
+import { useLocation } from "react-router-dom";
 import { CSSTransition } from "react-transition-group";
+import { withTheme } from "styled-components";
 
-import { NavContent, NavWrapper, NavOverlay } from "./style";
-import { BurgerMenu } from "../BurgerMenu";
-import { NavContext } from "./NavContext";
 import { size } from "../../GlobalStyle";
+import { BurgerMenu } from "../BurgerMenu";
 import { NavItem } from "../NavItem";
+import { NavContext } from "./NavContext";
+import { NavContent, NavOverlay, NavWrapper } from "./style";
 
 export const LeftNavigation = withTheme(() => {
   const [toggleMenu, setToggleMenu] = useState(true);
@@ -27,7 +29,7 @@ export const LeftNavigation = withTheme(() => {
         state: { prevScreen: currentScreen, routes },
       },
       isActive: pathname === "/",
-      icon: <FiCpu />,
+      icon: <TbHome />,
       tooltip: "Home",
     },
     {
@@ -36,7 +38,7 @@ export const LeftNavigation = withTheme(() => {
         state: { prevScreen: currentScreen, routes },
       },
       isActive: pathname === "/projects",
-      icon: <FiGitBranch />,
+      icon: <PiBlueprint />,
       tooltip: "Projects",
     },
     {
@@ -45,7 +47,7 @@ export const LeftNavigation = withTheme(() => {
         state: { prevScreen: currentScreen, routes },
       },
       isActive: pathname === "/contact",
-      icon: <FiBookOpen />,
+      icon: <AiOutlineContacts />,
       tooltip: "Contact",
       last: true,
     },
@@ -100,7 +102,7 @@ export const LeftNavigation = withTheme(() => {
         in={toggleMenu}
         unmountOnExit
         timeout={500}
-        classNames="menu-open"
+        classNames='menu-open'
       >
         <NavContent isVisible={isVisible}>
           <IconContext.Provider value={{ size: "1.3em" }}>

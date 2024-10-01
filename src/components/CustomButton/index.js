@@ -1,5 +1,5 @@
 import React from "react";
-import { ButtonWrapper, ButtonShadow, ButtonText, ButtonMain } from "./style";
+import { ButtonMain, ButtonShadow, ButtonText, ButtonWrapper } from "./style";
 
 export const CustomButton = ({
   title,
@@ -13,16 +13,16 @@ export const CustomButton = ({
   target,
 }) => {
   return (
-    <ButtonWrapper
-      type={type}
-      width={width}
-      height={height}
-      style={style}
-      onClick={onClick}
-      href={href}
-      target={target}
-    >
-      <ButtonMain>
+    <ButtonWrapper>
+      <ButtonMain
+        type={type}
+        width={width}
+        height={height}
+        style={style}
+        onClick={onClick}
+        href={href}
+        target={target}
+      >
         <ButtonText fontSize={fontSize}>{title}</ButtonText>
       </ButtonMain>
       {/* BG color changes to purple when type="action" */}

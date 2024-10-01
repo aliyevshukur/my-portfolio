@@ -2,46 +2,39 @@ import styled from "styled-components";
 
 import { devices } from "../../GlobalStyle";
 
-export const ButtonWrapper = styled.a`
+export const ButtonWrapper = styled.div`
   ${(props) => props.style}
 
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-width: ${({ width }) => width};
-  height: ${({ height }) => height};
-  border-radius: 3px;
+
+  border-radius: 5px;
   text-decoration: none;
   text-align: center;
   cursor: pointer;
 
-  /* If button type is action button swap the colors */
-  background-color: ${({ theme, type }) =>
-    type === "action" ? theme.secondary : theme.darkText};
-  color: ${({ theme, type }) =>
-    type === "action" ? theme.primary : theme.primary};
-
-  @media ${devices.mobileL} {
-    min-width: ${({ width }) => `${width.slice(0, -2) * 0.8}px`};
-    height: ${({ height }) => `${height.slice(0, -2) * 0.8}px`};
+  &:hover {
+    filter: brightness(0.9);
   }
 
-  @media ${devices.mobileM} {
-    min-width: ${({ width }) => `${width.slice(0, -2) * 0.7}px`};
-    height: ${({ height }) => `${height.slice(0, -2) * 0.7}px`};
-  }
-
-  @media ${devices.mobileS} {
-    min-width: ${({ width }) => `${width.slice(0, -2) * 0.6}px`};
-    height: ${({ height }) => `${height.slice(0, -2) * 0.6}px`};
+  &:active {
+    transform: scaleY(0.95);
   }
 `;
 
-export const ButtonMain = styled.div`
+export const ButtonMain = styled.a`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100%;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px 5px 0px 0px;
+
+  /* If button type is action button swap the colors */
+  background-color: ${({ theme, type }) =>
+    type === "action" ? theme.secondary : theme.darkText};
+  color: ${({ theme, type }) => (type === "action" ? "white" : theme.primary)};
 `;
 
 export const ButtonShadow = styled.div`
@@ -49,27 +42,13 @@ export const ButtonShadow = styled.div`
   background-color: ${({ theme, type }) =>
     type === "action" ? theme.secondary : theme.darkText};
   width: 100%;
-  height: 14%;
-  border-radius: 0 0 3px 3px;
+  height: 6px;
+  border-radius: 0 0 5px 5px;
+  border: none;
 `;
 
 export const ButtonText = styled.p`
   text-transform: uppercase;
-  font-size: ${({ fontSize }) => fontSize || "13px"};
+  font-size: 0.8rem;
   font-weight: bold;
-
-  @media ${devices.mobileL} {
-    font-size: ${({ fontSize }) =>
-      fontSize ? `${fontSize.slice(0, -2) * 0.9}px` : "calc(13px*0.9)"};
-  }
-
-  @media ${devices.mobileM} {
-    font-size: ${({ fontSize }) =>
-      fontSize ? `${fontSize.slice(0, -2) * 0.8}px` : "calc(13px*0.8)"};
-  }
-
-  @media ${devices.mobileS} {
-    font-size: ${({ fontSize }) =>
-      fontSize ? `${fontSize.slice(0, -2) * 0.65}px` : "calc(13px*0.65)"};
-  }
 `;

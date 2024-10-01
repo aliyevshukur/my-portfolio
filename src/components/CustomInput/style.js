@@ -20,18 +20,7 @@ export const InputLabel = styled.label`
   text-transform: uppercase;
   color: ${({ theme }) => theme.darkText};
   margin-bottom: 14px;
-
-  @media ${devices.mobileL} {
-    font-size: 13px;
-  }
-
-  @media ${devices.mobileM} {
-    font-size: 12px;
-  }
-
-  @media ${devices.mobileS} {
-    font-size: 11px;
-  }
+  font-size: 1rem;
 `;
 export const Input = styled.input`
   background-color: ${({ theme }) => theme.primary};

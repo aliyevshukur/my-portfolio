@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import { ThemeProvider } from "styled-components";
 
-import theme from "./theme";
 import GlobalStye from "./GlobalStyle";
-import { Wrapper } from "./style.js";
 import { RootNavigation } from "./RootNavigation";
 import { NavProvider } from "./components/LeftNavigation/NavContext";
-import { ThemeToggleProvider } from "./views/Home/themeContext";
+import { Wrapper } from "./style.js";
+import theme from "./theme";
 import { toggleThemeColors } from "./theme.js";
+import { ThemeToggleProvider } from "./views/Home/themeContext";
 
 class App extends Component {
   state = {
@@ -16,6 +16,19 @@ class App extends Component {
     routes: ["/", "/projects", "/contact"],
     isDarkMode: false,
   };
+
+  componentDidMount() {
+    // Checks if store is created in local storage, if not creates it
+    if (localStorage.getItem("isDarkMode") == null) {
+      localStorage.setItem("isDarkMode", false);
+    }
+
+    // Checks if dark mode is set in local storage
+    if (localStorage.getItem("isDarkMode") === true) {
+      this.setState({ isDarkMode: true });
+      toggleThemeColors(true);
+    }
+  }
 
   setVisible = (value) => {
     this.setState({ isVisible: value });
@@ -27,6 +40,7 @@ class App extends Component {
 
   toggleTheme = () => {
     this.setState({ isDarkMode: !this.state.isDarkMode });
+    localStorage.setItem("isDarkMode", !this.state.isDarkMode);
     toggleThemeColors(!this.state.isDarkMode);
     console.log("object", !this.state.isDarkMode);
   };

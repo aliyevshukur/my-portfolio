@@ -15,8 +15,16 @@ export const Wrapper = styled.div`
   position: absolute;
   top: 0;
   right: 0;
-  padding: ${(props) => props.theme.spacing(2)}px;
+  padding: ${(props) => props.theme.spacing(3)}px;
   overflow: hidden;
+
+  @media ${devices.tablet} {
+    padding: ${(props) => props.theme.spacing(1.5)}px;
+  }
+
+  @media ${devices.mobileM} {
+    padding: ${(props) => props.theme.spacing(1)}px;
+  }
 
   /* SLIDE DOWN */
   &.slide-down-enter {

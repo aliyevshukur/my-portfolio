@@ -55,16 +55,35 @@ const Tooltip = styled.div`
   box-shadow: rgba(99, 99, 99, 0.2) 8px 0px 8px 0px;
 `;
 
+const NavIcon = styled.div`
+  color: ${(props) =>
+    props.isActive ? props.theme.secondary : props.theme.darkText};
+`;
+
 const Wrapper = styled.div`
   margin-bottom: ${(props) => (props.last ? 0 : 70)}px;
   ${({ isLocked }) => isLocked && "pointer-events: none"};
   ${({ isActive }) => isActive && "pointer-events: none"};
   position: relative;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+    background-color: ${({ theme }) => theme.primaryDarker};};
+  }
 
   &:hover > ${Tooltip} {
     visibility: visible;
     width: 180px;
     opacity: 100%;
+  }
+
+  &:hover ${NavIcon} {
   }
 
   @media ${devices.tablet} {
@@ -76,9 +95,8 @@ const Wrapper = styled.div`
   }
 `;
 
-const NavIcon = styled.div`
-  color: ${(props) =>
-    props.isActive ? props.theme.secondary : props.theme.darkText};
+const NavLink = styled(Link)`
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
-
-const NavLink = styled(Link)``;

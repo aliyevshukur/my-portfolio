@@ -3,6 +3,8 @@ import styled from "styled-components";
 import { devices } from "../../GlobalStyle";
 
 export const NavWrapper = styled.div`
+  background-color: ${(props) => props.theme.primary};
+  transition: background-color 0.5s ease-in-out;
   height: 100%;
   overflow: visible;
   z-index: 1;
@@ -18,6 +20,7 @@ export const NavWrapper = styled.div`
 
 export const NavContent = styled.nav`
   background-color: ${(props) => props.theme.primary};
+  transition: background-color 0.5s ease-in-out;
   width: 90px;
   height: 100%;
   display: flex;

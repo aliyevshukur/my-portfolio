@@ -1,76 +1,56 @@
 import React from "react";
 
-import { ProjectWrapper, ContentWrapper, PageLabel } from "./style";
 import { SingleProject } from "../../components/SingleProject";
-import travel from "../../img/travel.png";
 import neotravel from "../../img/neotravel.png";
+import noted from "../../img/noted.png";
+import planteResonance from "../../img/planet-resonance-page.png";
+import travel from "../../img/travel.png";
+import { ContentWrapper, PageLabel, ProjectWrapper } from "./style";
 
 export const Projects = () => {
   // Every 2 projects must be written as seperate array
   const projects = [
     {
-      name: "Neotravel",
-      desc:
-        "Mobile application that gathers hotels around the world for users to explore.",
-      liveLink: "",
-      githubLink: "https://github.com/aliyevshukur/neotravel",
-      image: neotravel,
-    },
-    {
       name: "Travel Overload",
-      desc:
-        "Place to share your experiences and read about others travel stories. ",
-      liveLink: "https://travel-overload.netlify.app",
+      desc: "Place to share your experiences and read about others travel stories.",
+      techStack: "React, SCSS, Node.js, Express.js, MongoDB, Mongoose",
+      liveLink: "https://travel-overload.vercel.app/login",
       githubLink: "https://github.com/aliyevshukur/travel-overload",
       image: travel,
     },
     {
-      name: "Notes App",
-      desc: "Website for taking simple notes.",
-      liveLink: "",
+      name: "Plante Resonance",
+      desc: "Website for the company that sells latest technology speakers.",
+      techStack:
+        "React, SCSS, Typescript, Node.js, Express.js, MongoDB, Mongoose",
+      liveLink: "https://sales-db-app.vercel.app/",
+      githubLink: "https://github.com/aliyevshukur/sales-db-app",
+      image: planteResonance,
+    },
+    {
+      name: "Noted! App",
+      desc: "Your virtual board to put your sticky notes.",
+      techStack: "React, SCSS, DNDKit, Node.js, Express.js, MongoDB, Mongoose",
+      liveLink: "https://note-taking-website-two.vercel.app/",
       githubLink: "https://github.com/aliyevshukur/note-taking-website",
-    },
-
-    {
-      name: "Shop List",
-      desc:
-        "Handy grocery list application. Add products, select quantities and check off items.",
-      liveLink: "",
-      githubLink: "https://github.com/aliyevshukur/shop-list",
-    },
-
-    {
-      name: "Travel Overload",
-      desc:
-        "Place to share your experiences and read about others travel stories. ",
-      liveLink: "https://travel-overload.netlify.app/home",
-      githubLink: "https://github.com/aliyevshukur/travel-overload",
-    },
-
-    {
-      name: "Shop List",
-      desc:
-        "Handy grocery list application. Add products, select quantities and check off items.",
-      liveLink: "",
-      githubLink: "https://github.com/aliyevshukur/shop-list",
+      image: noted,
     },
   ];
 
   return (
     <ProjectWrapper>
-      <ContentWrapper>
-        <PageLabel>Projects</PageLabel>
-        {projects.map((project, ind) => (
-          <SingleProject
-            name={project.name}
-            desc={project.desc}
-            liveLink={project.liveLink}
-            githubLink={project.githubLink}
-            key={ind}
-            image={project.image}
-          />
-        ))}
-      </ContentWrapper>
+      <PageLabel>Projects</PageLabel>
+      {projects.map((project, ind) => (
+        <SingleProject
+          name={project.name}
+          desc={project.desc}
+          techStack={project.techStack}
+          liveLink={project.liveLink}
+          githubLink={project.githubLink}
+          key={ind}
+          image={project.image}
+        />
+      ))}
     </ProjectWrapper>
   );
 };

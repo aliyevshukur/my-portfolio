@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
-import { Wrapper } from "../defaultPageStyle";
 import { devices } from "../../GlobalStyle";
+import { Wrapper } from "../defaultPageStyle";
 
 export const ContactWrapper = styled(Wrapper)`
   background-color: ${(props) => props.theme.primary};
@@ -52,26 +52,8 @@ export const ContactImg = styled.img`
 `;
 
 export const ContactText = styled.h1`
-  font-size: 50px;
-  line-height: 60px;
-
-  @media ${devices.laptopL} {
-    font-size: 40px;
-  }
-
-  @media ${devices.mobileL} {
-    font-size: 30px;
-    line-height: 60px;
-  }
-  @media ${devices.mobileM} {
-    font-size: 27px;
-    line-height: 30px;
-  }
-
-  @media ${devices.mobileS} {
-    font-size: 23px;
-    line-height: 30px;
-  }
+  font-size: 3.1rem;
+  line-height: 3.75rem;
 `;
 export const ContactForm = styled.form`
   display: flex;

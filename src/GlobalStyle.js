@@ -9,7 +9,8 @@ export const size = {
   laptop: "1024",
   laptopM: "1300",
   laptopL: "1440",
-  desktop: "2560",
+  desktop: "1920",
+  desktopL: "2560",
 };
 
 export const devices = {
@@ -21,7 +22,7 @@ export const devices = {
   laptopM: `(max-width: ${size.laptopM}px)`,
   laptopL: `(max-width: ${size.laptopL}px)`,
   desktop: `(max-width: ${size.desktop}px)`,
-  desktopL: `(max-width: ${size.desktop}px)`,
+  desktopL: `(max-width: ${size.desktopL}px)`,
 };
 
 const GlobalStyle = createGlobalStyle`
@@ -35,8 +36,37 @@ const GlobalStyle = createGlobalStyle`
     height: 100%;
     font-family: 'Archia', sans-serif;
     overflow: hidden;
+
+    @media ${devices.desktopL} {
+      font-size: 150%;
+    }
+
+    @media ${devices.desktop} {
+      font-size: 120%;
+    }
+
+    @media ${devices.laptopL} {
+      font-size: 100%;
+    }
+
+    @media ${devices.laptopM} {
+      font-size: 80%;
+    }
+
+    @media ${devices.laptop} {
+      font-size: 60%;
+    }
+
+    @media ${devices.mobileL} {
+      font-size: 48%;
+    }
+
+    @media ${devices.mobileM} {
+      font-size: 40%;
+    }
+
   }
-  
+
   @font-face {
     font-family: "Open-Sans";
     src: local('Archia'), url(./fonts/archia-regular-webfont.ttf) format('truetype');
