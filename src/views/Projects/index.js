@@ -1,16 +1,10 @@
 import React from "react";
 
 import { SingleProject } from "../../components/SingleProject";
-import neotravel from "../../img/neotravel.png";
 import noted from "../../img/noted.png";
 import planteResonance from "../../img/planet-resonance-page.png";
 import travel from "../../img/travel.png";
-import {
-  ContentWrapper,
-  PageLabel,
-  ProjectsContent,
-  ProjectsWrapper,
-} from "./style";
+import { PageLabel, ProjectsContent, ProjectsWrapper } from "./style";
 
 export const Projects = () => {
   // Every 2 projects must be written as seperate array

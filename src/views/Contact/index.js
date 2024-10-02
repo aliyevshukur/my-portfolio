@@ -1,41 +1,36 @@
+import emailjs from "@emailjs/browser";
 import React, { useRef } from "react";
-import { CustomInput, CustomButton, CustomTextArea } from "../../components";
 import { css } from "styled-components";
-import emailjs from "emailjs-com";
+import { CustomButton, CustomInput, CustomTextArea } from "../../components";
 
+import ContactMe from "../../img/contact-me.svg";
 import { ContactWrapper } from "./style";
 import {
-  ContactText,
   ContactForm,
-  ContactImg,
   ContactHero,
+  ContactImg,
+  ContactText,
   FormSection,
 } from "./style.js";
-import ContactMe from "../../img/contact-me.svg";
 
 export const Contact = () => {
   const form = useRef();
 
   const onSubmit = (e) => {
     e.preventDefault();
-    console.log("testttt", e.target);
+
     emailjs
-      .sendForm(
-        "service_sy4lpqg",
-        "template_29x661y",
-        e.target,
-        "user_thLS7cIlaVIKNDN1Btvnm"
-      )
+      .sendForm("service_7rhg0vp", "template_gkirw0t", form.current, {
+        publicKey: "rLnpJS826oflJDRw2",
+      })
       .then(
         (result) => {
-          console.log(result.text);
+          console.log("Successfully sent email: ", result.text);
         },
         (error) => {
-          console.log(error.text);
-        }
+          console.log("Error sending email: ", error.text);
+        },
       );
-
-    e.target.reset();
   };
 
   return (
@@ -47,24 +42,24 @@ export const Contact = () => {
 
       <ContactForm onSubmit={onSubmit} ref={form}>
         <FormSection>
-          <CustomInput type="half" label="name" name="name" />
-          <CustomInput type="half" label="subject" name="subject" />
+          <CustomInput type='half' label='name' name='user_name' />
+          <CustomInput type='half' label='subject' name='user_subject' />
         </FormSection>
-        <CustomInput label="email" name="email" />
+        <CustomInput label='email' name='user_email' />
         <CustomTextArea
-          id="details"
-          type="text-area"
-          name="message"
-          label="message"
-          rows="5"
-          cols="50"
+          id='details'
+          type='text-area'
+          name='message'
+          label='message'
+          rows='5'
+          cols='50'
         />
         <CustomButton
-          title="send"
-          width="150px"
-          height="55px"
-          type="action"
-          fontSize="18px"
+          title='send'
+          width='150px'
+          height='55px'
+          type='action'
+          fontSize='18px'
           style={() =>
             css`
               align-self: flex-end;

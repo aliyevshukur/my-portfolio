@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { IconContext } from "react-icons";
 import { TiWeatherNight, TiWeatherSunny } from "react-icons/ti";
 import { SwitchButtonIcon, ThemeSwitchBtn } from "./style";

@@ -16,7 +16,6 @@ import {
   ContentText,
   HomeAbout,
   HomeButtons,
-  HomeContent,
   Name,
   ReferanceLink,
   ReferanceLinkImage,
@@ -35,11 +34,11 @@ export const Home = () => {
 
       <HomeAbout>
         <ContentHeader>
-          Hi, I'm <Name>Shukur</Name> Aliyev
+          Hi, I&apos;m <Name>Shukur</Name> Aliyev
         </ContentHeader>
         <ContentText>
-          I'm a junior front-end developer passionate about creating engaging
-          and user-friendly web experiences.
+          I&apos;m a junior front-end developer passionate about creating
+          engaging and user-friendly web experiences.
         </ContentText>
         <ContentText>
           I focus on clean code and responsive design to bring ideas to life.

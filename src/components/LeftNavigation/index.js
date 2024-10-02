@@ -64,6 +64,7 @@ export const LeftNavigation = withTheme(() => {
 
   useEffect(() => {
     setNavItems(navItemsData);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentScreen]);
 
   const handleResize = () => {
