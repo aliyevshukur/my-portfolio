@@ -22,7 +22,7 @@ export const Projects = () => {
       desc: "Website for the company that sells latest technology speakers.",
       techStack:
         "React, SCSS, Typescript, Node.js, Express.js, MongoDB, Mongoose",
-      liveLink: "https://sales-db-app.vercel.app/",
+      liveLink: "https://planet-resonance.vercel.app/",
       githubLink: "https://github.com/aliyevshukur/sales-db-app",
       image: planteResonance,
     },
@@ -30,7 +30,7 @@ export const Projects = () => {
       name: "Noted! App",
       desc: "Your virtual board to put your sticky notes.",
       techStack: "React, SCSS, DNDKit, Node.js, Express.js, MongoDB, Mongoose",
-      liveLink: "https://note-taking-website-two.vercel.app/",
+      liveLink: "https://noted-app-shukur.vercel.app/",
       githubLink: "https://github.com/aliyevshukur/note-taking-website",
       image: noted,
     },
