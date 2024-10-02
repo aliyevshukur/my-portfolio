@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { ThemeProvider } from "styled-components";
 
+import { Ripple } from "react-preloaders";
 import GlobalStye from "./GlobalStyle";
 import { RootNavigation } from "./RootNavigation";
 import { NavProvider } from "./components/LeftNavigation/NavContext";
@@ -81,6 +82,12 @@ class App extends Component {
             <GlobalStye />
             <Wrapper>
               <RootNavigation />
+              <Ripple
+                time={1000}
+                animatio={"fade"}
+                background={this.state.isDarkMode ? "#212121" : "#ffffff"}
+                color={"#ed7966"}
+              />
             </Wrapper>
           </ThemeToggleProvider>
         </ThemeProvider>

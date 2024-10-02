@@ -35,6 +35,9 @@ importers:
       react-icons:
         specifier: ^5.3.0
         version: 5.3.0(react@16.14.0)
+      react-preloaders:
+        specifier: ^3.0.3
+        version: 3.0.3(@babel/core@7.25.2)(react-dom@16.14.0(react@16.14.0))(react-is@18.3.1)
       react-router-dom:
         specifier: ^5.3.4
         version: 5.3.4(react@16.14.0)
@@ -4610,6 +4613,9 @@ packages:
 
   react-is@18.3.1:
     resolution: {integrity: sha512-/LLMVyas0ljjAtoYiPqYiL8VWXzUUdThrmU5+n20DZv+a+ClRoevUzw5JxU+Ieh5/c87ytoTBV9G1FiKfNJdmg==}
+
+  react-preloaders@3.0.3:
+    resolution: {integrity: sha512-kDqXpJBK+HLRHpYvVHWLMdQo2Y7sqdNBS19YKzLZD6spkAJbEPd256GrZqwNn6b+/MX+1dLHPMBczbFEX7lWRA==}
 
   react-refresh@0.11.0:
     resolution: {integrity: sha512-F27qZr8uUqwhWZboondsPx8tnC3Ct3SxZA3V5WyEvujRyyNv0VYPhoBg1gZ8/MV5tubQp76Trw8lTv9hzRBa+A==}
@@ -11219,6 +11225,16 @@ snapshots:
   react-is@17.0.2: {}
 
   react-is@18.3.1: {}
+
+  react-preloaders@3.0.3(@babel/core@7.25.2)(react-dom@16.14.0(react@16.14.0))(react-is@18.3.1):
+    dependencies:
+      prop-types: 15.8.1
+      react: 16.14.0
+      styled-components: 5.3.11(@babel/core@7.25.2)(react-dom@16.14.0(react@16.14.0))(react-is@18.3.1)(react@16.14.0)
+    transitivePeerDependencies:
+      - '@babel/core'
+      - react-dom
+      - react-is
 
   react-refresh@0.11.0: {}
 

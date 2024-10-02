@@ -1,9 +1,9 @@
 import React from "react";
 import { Route, Switch, withRouter } from "react-router-dom";
-import { TransitionGroup, CSSTransition } from "react-transition-group";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 
-import { Home, Projects, Contact } from "./views";
 import { LeftNavigation } from "./components";
+import { Contact, Home, Projects } from "./views";
 import { NotFound } from "./views/NotFound.js";
 import { PageContainer } from "./views/defaultPageStyle";
 
@@ -27,10 +27,10 @@ export const RootNavigation = withRouter(() => {
           >
             <CSSTransition timeout={1000} key={location.key}>
               <Switch location={location}>
-                <Route exact path="/" component={Home} />
-                <Route path="/projects" component={Projects} />
-                <Route path="/contact" component={Contact} />
-                <Route path="*" component={NotFound} />
+                <Route exact path='/' component={Home} />
+                <Route path='/projects' component={Projects} />
+                <Route path='/contact' component={Contact} />
+                <Route path='*' component={NotFound} />
               </Switch>
             </CSSTransition>
           </TransitionGroup>
