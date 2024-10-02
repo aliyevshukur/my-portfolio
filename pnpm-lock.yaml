@@ -35,6 +35,9 @@ importers:
       react-icons:
         specifier: ^5.3.0
         version: 5.3.0(react@16.14.0)
+      react-intersection-observer:
+        specifier: ^9.13.1
+        version: 9.13.1(react-dom@16.14.0(react@16.14.0))(react@16.14.0)
       react-preloaders:
         specifier: ^3.0.3
         version: 3.0.3(@babel/core@7.25.2)(react-dom@16.14.0(react@16.14.0))(react-is@18.3.1)
@@ -53,6 +56,9 @@ importers:
       styled-reset:
         specifier: ^4.5.2
         version: 4.5.2(styled-components@5.3.11(@babel/core@7.25.2)(react-dom@16.14.0(react@16.14.0))(react-is@18.3.1)(react@16.14.0))
+      transitions-kit:
+        specifier: ^1.2.4
+        version: 1.2.4(react-dom@16.14.0(react@16.14.0))(react@16.14.0)
     devDependencies:
       prettier:
         specifier: ^2.8.8
@@ -4605,6 +4611,15 @@ packages:
     peerDependencies:
       react: '*'
 
+  react-intersection-observer@9.13.1:
+    resolution: {integrity: sha512-tSzDaTy0qwNPLJHg8XZhlyHTgGW6drFKTtvjdL+p6um12rcnp8Z5XstE+QNBJ7c64n5o0Lj4ilUleA41bmDoMw==}
+    peerDependencies:
+      react: ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+      react-dom: ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+    peerDependenciesMeta:
+      react-dom:
+        optional: true
+
   react-is@16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
 
@@ -5282,6 +5297,12 @@ packages:
   tr46@2.1.0:
     resolution: {integrity: sha512-15Ih7phfcdP5YxqiB+iDtLoaTz4Nd35+IiAv0kQ5FNKHzXgdWqPoTIqEDDJmXceQt4JZk6lVPT8lnDlPpGDppw==}
     engines: {node: '>=8'}
+
+  transitions-kit@1.2.4:
+    resolution: {integrity: sha512-XAalQkGcqkD2ztpgMKpKTQ7garPqM1h0FL5dE2SPScaa20CgpYV/CnlJWYVWe5JL+bapSNK8seWHfU+5N6fP3A==}
+    peerDependencies:
+      react: '>=16.6.0'
+      react-dom: '>=16.6.0'
 
   tryer@1.0.1:
     resolution: {integrity: sha512-c3zayb8/kWWpycWYg87P71E1S1ZL6b6IJxfb5fvsUgsf0S2MVGaDhDXXjDMpdCpfWXqptc+4mXwmiy1ypXqRAA==}
@@ -11220,6 +11241,12 @@ snapshots:
     dependencies:
       react: 16.14.0
 
+  react-intersection-observer@9.13.1(react-dom@16.14.0(react@16.14.0))(react@16.14.0):
+    dependencies:
+      react: 16.14.0
+    optionalDependencies:
+      react-dom: 16.14.0(react@16.14.0)
+
   react-is@16.13.1: {}
 
   react-is@17.0.2: {}
@@ -12098,6 +12125,12 @@ snapshots:
   tr46@2.1.0:
     dependencies:
       punycode: 2.3.1
+
+  transitions-kit@1.2.4(react-dom@16.14.0(react@16.14.0))(react@16.14.0):
+    dependencies:
+      react: 16.14.0
+      react-dom: 16.14.0(react@16.14.0)
+      react-transition-group: 4.4.5(react-dom@16.14.0(react@16.14.0))(react@16.14.0)
 
   tryer@1.0.1: {}
 

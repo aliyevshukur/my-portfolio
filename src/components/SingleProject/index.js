@@ -8,9 +8,9 @@ import {
   Desc,
   Details,
   IconName,
-  Image,
   Name,
   SingleProjectContent,
+  SingleProjectImage,
   SingleProjectWrapper,
   TechStack,
   TechStackLabel,
@@ -47,7 +47,7 @@ export const SingleProject = ({
   };
   return (
     <SingleProjectWrapper>
-      <Image src={image} />
+      <SingleProjectImage src={image} />
 
       <SingleProjectContent>
         <Details>

@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import { devices } from "../../GlobalStyle";
+import { Image } from "../../components/Image";
+import { AsyncImage } from "../AsyncImage";
 
 export const SingleProjectWrapper = styled.div`
   display: flex;
@@ -14,8 +16,8 @@ export const SingleProjectWrapper = styled.div`
   }
 `;
 
-export const Image = styled.img`
-  width: 40%;
+export const SingleProjectImage = styled((props) => <AsyncImage {...props} />)`
+  width: 100%;
   aspet-ratio: 2 / 1;
   object-fit: cover;
   border-radius: 5px 5px 0 0;
