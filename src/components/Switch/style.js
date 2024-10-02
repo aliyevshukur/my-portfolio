@@ -65,10 +65,7 @@ export const SwitchButtonIcon = styled.div`
   justify-content: center;
 
   position: absolute;
-  right: ${({ isDarkMode }) => {
-    console.log(`isDarkMode  in style ${isDarkMode}`);
-    return isDarkMode ? "5px" : "26px";
-  }};
+  right: ${({ isDarkMode }) => (isDarkMode ? "5px" : "26px")};
   transform: rotate(${({ isDarkMode }) => (isDarkMode ? "180" : "0")}deg);
   transition: all 0.3s ease-out;
 

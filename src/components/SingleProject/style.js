@@ -1,24 +1,16 @@
 import styled from "styled-components";
 import { devices } from "../../GlobalStyle";
 
-export const ProjectWrapper = styled.div`
-  width: 900px;
+export const SingleProjectWrapper = styled.div`
   display: flex;
   background-color: ${({ theme }) => theme.primary};
   border-radius: 5px;
-  margin: 30px;
+  margin: 30px 0px;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-
-  @media ${devices.laptop} {
-    width: 650px;
-  }
+  width: 100%;
 
   @media ${devices.tablet} {
-    width: 450px;
-  }
-
-  @media ${devices.mobileL} {
-    width: 350px;
+    flex-direction: column;
   }
 `;
 
@@ -27,18 +19,26 @@ export const Image = styled.img`
   aspet-ratio: 2 / 1;
   object-fit: cover;
   border-radius: 5px 5px 0 0;
+
+  @media ${devices.tablet} {
+    width: 100%;
+  }
 `;
 
-export const ProjectContent = styled.div`
+export const SingleProjectContent = styled.div`
+  width: 60%;
   height: 100%;
-  width: 100%;
   background-color: ${({ theme }) => theme.primary};
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
   border-radius: 0 0 5px 5px;
-  padding: 15px;
+  padding: 10px;
+
+  @media ${devices.tablet} {
+    width: 100%;
+  }
 `;
 
 export const Details = styled.div`
@@ -70,6 +70,7 @@ export const Desc = styled.p`
 `;
 
 export const TechStack = styled.div`
+  color: ${({ theme }) => theme.lightText};
   font-size: 0.9rem;
   display: flex;
   flex-wrap: wrap;
@@ -80,11 +81,7 @@ export const IconName = styled.div`
   display: inline-block;
   padding: 2px 3px;
   border-radius: 5px;
-  background-color: #f0f0f0;
-
-  &:hover {
-    background-color: #e0e0e0;
-  }
+  background-color: ${({ theme }) => theme.primaryDarker};
 `;
 
 export const TechStackLabel = styled.div`

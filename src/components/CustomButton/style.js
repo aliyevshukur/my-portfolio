@@ -31,6 +31,10 @@ export const ButtonMain = styled.a`
   padding: 10px 20px;
   border-radius: 5px 5px 0px 0px;
 
+  @media ${devices.mobileL} {
+    padding: 6px 12px;
+  }
+
   /* If button type is action button swap the colors */
   background-color: ${({ theme, type }) =>
     type === "action" ? theme.secondary : theme.darkText};
@@ -45,6 +49,9 @@ export const ButtonShadow = styled.div`
   height: 6px;
   border-radius: 0 0 5px 5px;
   border: none;
+
+  @media ${devices.mobileL} {
+      height: 4px;
 `;
 
 export const ButtonText = styled.p`

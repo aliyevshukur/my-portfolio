@@ -4,7 +4,6 @@ import { TiWeatherNight, TiWeatherSunny } from "react-icons/ti";
 import { SwitchButtonIcon, ThemeSwitchBtn } from "./style";
 
 export default function Switch({ onClick, isDarkMode }) {
-  console.log(`isDark in Switch ${isDarkMode}`);
   return (
     <IconContext.Provider value={{ size: "21px" }}>
       <ThemeSwitchBtn onClick={onClick} isDarkMode={isDarkMode}>

@@ -5,7 +5,12 @@ import neotravel from "../../img/neotravel.png";
 import noted from "../../img/noted.png";
 import planteResonance from "../../img/planet-resonance-page.png";
 import travel from "../../img/travel.png";
-import { ContentWrapper, PageLabel, ProjectWrapper } from "./style";
+import {
+  ContentWrapper,
+  PageLabel,
+  ProjectsContent,
+  ProjectsWrapper,
+} from "./style";
 
 export const Projects = () => {
   // Every 2 projects must be written as seperate array
@@ -38,19 +43,21 @@ export const Projects = () => {
   ];
 
   return (
-    <ProjectWrapper>
-      <PageLabel>Projects</PageLabel>
-      {projects.map((project, ind) => (
-        <SingleProject
-          name={project.name}
-          desc={project.desc}
-          techStack={project.techStack}
-          liveLink={project.liveLink}
-          githubLink={project.githubLink}
-          key={ind}
-          image={project.image}
-        />
-      ))}
-    </ProjectWrapper>
+    <ProjectsWrapper>
+      <ProjectsContent>
+        <PageLabel>Projects</PageLabel>
+        {projects.map((project, ind) => (
+          <SingleProject
+            name={project.name}
+            desc={project.desc}
+            techStack={project.techStack}
+            liveLink={project.liveLink}
+            githubLink={project.githubLink}
+            key={ind}
+            image={project.image}
+          />
+        ))}
+      </ProjectsContent>
+    </ProjectsWrapper>
   );
 };

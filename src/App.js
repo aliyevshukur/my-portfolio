@@ -18,15 +18,23 @@ class App extends Component {
   };
 
   componentDidMount() {
+    // Convert local storage value of isDarkMode to boolean
+    const isDarkModeLocal = localStorage.getItem("isDarkMode") === "true";
+
     // Checks if store is created in local storage, if not creates it
     if (localStorage.getItem("isDarkMode") == null) {
       localStorage.setItem("isDarkMode", false);
+      console.log("isDarkMode created in local storage");
     }
 
-    // Checks if dark mode is set in local storage
-    if (localStorage.getItem("isDarkMode") === true) {
-      this.setState({ isDarkMode: true });
+    // Checks if dark mode is enabled in local storage
+    if (isDarkModeLocal) {
+      this.setState(() => {
+        toggleThemeColors(true);
+        return { isDarkMode: true };
+      });
       toggleThemeColors(true);
+      console.log("Dark mode is enabled, switched to dark mode");
     }
   }
 
@@ -39,10 +47,17 @@ class App extends Component {
   };
 
   toggleTheme = () => {
-    this.setState({ isDarkMode: !this.state.isDarkMode });
-    localStorage.setItem("isDarkMode", !this.state.isDarkMode);
-    toggleThemeColors(!this.state.isDarkMode);
-    console.log("object", !this.state.isDarkMode);
+    this.setState(
+      (prevState) => {
+        toggleThemeColors(!this.state.isDarkMode);
+        return {
+          isDarkMode: !prevState.isDarkMode,
+        };
+      },
+      () => {
+        localStorage.setItem("isDarkMode", this.state.isDarkMode);
+      },
+    );
   };
 
   render() {

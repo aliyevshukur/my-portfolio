@@ -11,6 +11,7 @@ export const HomeWrapper = styled(Wrapper)`
   justify-content: space-evenly;
   height: 100%;
   position: relative;
+  padding: 50px;
 
   @media ${devices.tablet} {
     flex-direction: column-reverse;

@@ -10,8 +10,8 @@ import {
   IconName,
   Image,
   Name,
-  ProjectContent,
-  ProjectWrapper,
+  SingleProjectContent,
+  SingleProjectWrapper,
   TechStack,
   TechStackLabel,
 } from "./style.js";
@@ -46,10 +46,10 @@ export const SingleProject = ({
     }
   };
   return (
-    <ProjectWrapper>
+    <SingleProjectWrapper>
       <Image src={image} />
 
-      <ProjectContent>
+      <SingleProjectContent>
         <Details>
           <Name>{name}</Name>
           <Desc>{desc}</Desc>
@@ -79,7 +79,7 @@ export const SingleProject = ({
             href={githubLink}
           />
         </Buttons>
-      </ProjectContent>
-    </ProjectWrapper>
+      </SingleProjectContent>
+    </SingleProjectWrapper>
   );
 };

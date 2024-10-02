@@ -10,11 +10,16 @@ export const ContactWrapper = styled(Wrapper)`
   justify-content: space-around;
   align-items: center;
   height: 100%;
+  padding: 50px;
 
-  @media ${devices.laptopM} {
+  @media ${devices.laptop} {
     flex-direction: column;
     justify-content: flex-start;
     overflow: scroll;
+  }
+
+  @media ${devices.tablet} {
+    padding: 50px 15px;
   }
 `;
 
@@ -23,6 +28,7 @@ export const ContactHero = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  flex-grow: 1;
 
   @media ${devices.laptopM} {
     margin-bottom: 40px;
@@ -30,10 +36,19 @@ export const ContactHero = styled.div`
 `;
 
 export const ContactImg = styled.img`
-  width: 500px;
+  max-width: 500px;
 
   @media ${devices.laptopL} {
     width: 450px;
+  }
+
+  @media ${devices.laptop} {
+    width: 350px;
+  }
+
+  @media ${devices.tablet} {
+    max-width: 350px;
+    width: auto;
   }
 
   @media ${devices.mobileL} {
@@ -56,35 +71,39 @@ export const ContactText = styled.h1`
   line-height: 3.75rem;
 `;
 export const ContactForm = styled.form`
+  max-width: 660px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  flex-grow: 2;
   padding: 60px;
   box-shadow: ${(props) => props.theme.boxShadow};
-  width: 660px;
-  flex-shrink: 0;
 
   @media ${devices.laptopL} {
     padding: 40px;
-    width: 594px;
+    max-width: 594px;
+  }
+
+  @media ${devices.laptop} {
+    max-width: 500px;
   }
 
   @media ${devices.tablet} {
-    width: 468px;
+    max-width: 410px;
   }
 
   @media ${devices.mobileL} {
-    width: 390px;
-    padding: 20px;
-  }
-  @media ${devices.mobileM} {
-    width: 320px;
+    max-width: 340px;
     padding: 20px;
   }
 
+  @media ${devices.mobileM} {
+    max-width: 270px;
+    padding: 10px;
+  }
+
   @media ${devices.mobileS} {
-    width: 270px;
-    padding: 20px;
+    max-width: 270px;
   }
 `;
 

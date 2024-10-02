@@ -4,8 +4,8 @@ import styled from "styled-components";
 import { devices } from "../../GlobalStyle";
 
 const BurgerWrapper = styled.div`
-  width: 42px;
-  height: 42px;
+  width: 36px;
+  height: 36px;
   display: none;
   position: absolute;
   top: 20px;
@@ -18,6 +18,11 @@ const BurgerWrapper = styled.div`
     justify-content: ${(props) =>
       props.isToggled ? "center" : "space-between"};
     align-items: flex-start;
+  }
+
+  @media ${devices.mobileL} {
+    width: 28px;
+    height: 28px;
   }
 
   div {
@@ -46,6 +51,10 @@ const BurgerItem = styled.div`
   width: 100%;
   height: 6px;
   background-color: ${(props) => props.theme.secondary};
+
+  @media ${devices.mobileL} {
+    height: 4px;
+  }
 `;
 
 export const BurgerMenu = (props) => {
