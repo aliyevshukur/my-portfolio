@@ -1,6 +1,8 @@
 import { InView } from "react-intersection-observer";
 import styled from "styled-components";
+import { devices } from "../../GlobalStyle";
 import { Image } from "../Image";
+
 export const AsyncImage = (imageProps) => {
   return (
     <InView triggerOnce>
@@ -18,4 +20,8 @@ const ImageWrapper = styled.div`
   width: 40%;
   aspet-ratio: 2 / 1;
   position: relative;
+
+  @media ${devices.tablet} {
+    width: 100%;
+  }
 `;
