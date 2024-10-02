@@ -16,8 +16,8 @@ export const AsyncImage = (imageProps) => {
 };
 
 const ImageWrapper = styled.div`
-  height: 100%;
   width: 40%;
+  aspet-ratio: 2 / 1;
   aspet-ratio: 2 / 1;
   position: relative;
 
