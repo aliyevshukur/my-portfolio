@@ -71,6 +71,26 @@ export const ReferanceLink = styled.a``;
 export const ReferanceLinkImage = styled.img`
   width: 30px;
   height: 30px;
+
+  @media ${devices.tablet} {
+    width: 25px;
+    height: 25px;
+  }
+
+  @media ${devices.mobileL} {
+    width: 22px;
+    height: 22px;
+  }
+
+  @media ${devices.mobileM} {
+    width: 20px;
+    height: 20px;
+  }
+  @media ${devices.mobileS} {
+    width: 17px;
+    height: 17px;
+  }
+
   &:hover {
     filter: brightness(90%);
     transition: ease-in-out 0.5s;
