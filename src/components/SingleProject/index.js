@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { BsFiletypeScss } from "react-icons/bs";
 import { FaNodeJs, FaReact } from "react-icons/fa";
 import { SiExpress, SiMongodb, SiMongoose, SiTypescript } from "react-icons/si";
+import { AsyncImage } from "../AsyncImage/index.js";
 import { CustomButton } from "../CustomButton/index.js";
 import {
   Buttons,
@@ -23,9 +24,15 @@ export const SingleProject = ({
   liveLink,
   githubLink,
 }) => {
+  const [singleProjectImgWidth, setSingleProjectImgWidth] = useState(0);
+  const SingleProjectImageRef = useRef();
+
+  useEffect(() => {
+    setSingleProjectImgWidth(SingleProjectImageRef.current?.offsetWidth);
+  }, []);
+
   const pickIcons = (name) => {
     const size = "10px";
-
     switch (name) {
       case "React":
         return <FaReact width={size} height={size} />;
@@ -47,7 +54,13 @@ export const SingleProject = ({
   };
   return (
     <SingleProjectWrapper>
-      <SingleProjectImage src={image} />
+      {/* Hierarchy SingleProjectImage => AsyncImage => Image, all divs  */}
+      <SingleProjectImage
+        ref={SingleProjectImageRef}
+        width={singleProjectImgWidth}
+      >
+        <AsyncImage src={image} width={singleProjectImgWidth} />
+      </SingleProjectImage>
 
       <SingleProjectContent>
         <Details>

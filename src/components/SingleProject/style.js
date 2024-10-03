@@ -16,11 +16,11 @@ export const SingleProjectWrapper = styled.div`
   }
 `;
 
-export const SingleProjectImage = styled((props) => <AsyncImage {...props} />)`
-  width: 100%;
-  aspet-ratio: 2 / 1;
+export const SingleProjectImage = styled.div`
+  width: 40%;
+  height: ${({ width }) => width / 1.5 + "px"};
   object-fit: cover;
-  border-radius: 5px 5px 0 0;
+  border-radius: 5px 0px 0px 5px;
 
   @media ${devices.tablet} {
     width: 100%;
