@@ -21,6 +21,32 @@ export const SingleProjectImage = styled.div`
   height: ${({ width }) => width / 1.5 + "px"};
   object-fit: cover;
   border-radius: 5px 0px 0px 5px;
+  position: relative;
+
+  &:hover {
+    .image-description {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  .image-description {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 10px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
   @media ${devices.tablet} {
     width: 100%;

@@ -54,12 +54,12 @@ export const SingleProject = ({
   };
   return (
     <SingleProjectWrapper>
-      {/* Hierarchy SingleProjectImage => AsyncImage => Image, all divs  */}
       <SingleProjectImage
         ref={SingleProjectImageRef}
         width={singleProjectImgWidth}
       >
         <AsyncImage src={image} width={singleProjectImgWidth} />
+        <div className="image-description" onClick={() => window.open(liveLink)}> Go to live site</div>
       </SingleProjectImage>
 
       <SingleProjectContent>
